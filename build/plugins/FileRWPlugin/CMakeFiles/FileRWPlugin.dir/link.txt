@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFileRWPlugin.a CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o
+/usr/bin/ranlib libFileRWPlugin.a

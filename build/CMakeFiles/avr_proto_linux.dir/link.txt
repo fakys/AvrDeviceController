@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/avr_proto_linux.dir/src/Kernel.cpp.o CMakeFiles/avr_proto_linux.dir/src/PluginLoader.cpp.o CMakeFiles/avr_proto_linux.dir/src/main.cpp.o -o avr_proto_linux 

@@ -1,0 +1,8 @@
+//
+// Created by fakys on 01.10.2026.
+//
+
+#ifndef AVR_PROTO_LINUX_PLUGINLOADER_H
+#define AVR_PROTO_LINUX_PLUGINLOADER_H
+
+#endif //AVR_PROTO_LINUX_PLUGINLOADER_H
