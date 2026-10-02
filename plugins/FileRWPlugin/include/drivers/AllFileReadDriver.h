@@ -1,16 +1,12 @@
-//
-// Created by fakys on 02.10.2026.
-//
-
-#ifndef AVR_PROTO_LINUX_LINEREADDRIVER_H
-#define AVR_PROTO_LINUX_LINEREADDRIVER_H
+#ifndef AVR_PROTO_LINUX_AllREADDRIVER_H
+#define AVR_PROTO_LINUX_AllREADDRIVER_H
 #include "abstracts/AbstractReadDriver.h"
 
-class LineReadDriver: public AbstractReadDriver {
+class AllFileReadDriver : public AbstractReadDriver {
     public:
-        void readFile(int fileIndex, std::vector<uint8_t> buffer) {
-
+        bool readFile(std::vector<uint8_t>* buffer) override {
+            return false;
         }
 };
 
-#endif //AVR_PROTO_LINUX_LINEREADDRIVER_H
+#endif //AVR_PROTO_LINUX_AllREADDRIVER_H

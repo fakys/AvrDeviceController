@@ -4,10 +4,11 @@
 
 #ifndef AVR_PROTO_LINUX_FILENOTSUPORTEDDRIVER_H
 #define AVR_PROTO_LINUX_FILENOTSUPORTEDDRIVER_H
-#include "AbstractReadDriver.h"
+#include "MainException.h"
 
-class FileNotSupportedDriver: public AbstractReadDriver {
-
-}
+class FileNotSupportedDriver: public MainException {
+public:
+    FileNotSupportedDriver(std::string message): MainException(message) {};
+};
 
 #endif //AVR_PROTO_LINUX_FILENOTSUPORTEDDRIVER_H
