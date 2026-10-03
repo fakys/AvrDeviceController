@@ -1,9 +1,0 @@
-/home/fakys/projects/avr_proto_linux/build/CMakeFiles/AvrDeviceController.dir
-/home/fakys/projects/avr_proto_linux/build/CMakeFiles/edit_cache.dir
-/home/fakys/projects/avr_proto_linux/build/CMakeFiles/rebuild_cache.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin/CMakeFiles/edit_cache.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin/CMakeFiles/rebuild_cache.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/ConfiguratePlugin/CMakeFiles/edit_cache.dir
-/home/fakys/projects/avr_proto_linux/build/plugins/ConfiguratePlugin/CMakeFiles/rebuild_cache.dir
