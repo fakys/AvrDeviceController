@@ -6,7 +6,6 @@
 #include "PluginLoader.h"
 #include "AbstractReadDriver.h"
 #include <fcntl.h>
-
 #include "AbstractWriteDriver.h"
 
 
@@ -38,6 +37,7 @@ class FileRWPlugin: public AbstractPlugin {
     };
 };
 
+#define FileRWP "FileRWPlugin"
 
 registerPlugin(FileRWPlugin)
 

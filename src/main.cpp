@@ -1,18 +1,15 @@
 #include "PluginLoader.h"
 #include "main.h"
+
+#include "Kernel.h"
 #include "plugins.h"
 #include "drivers/LineReadDriver.h"
 
-void initConfig() {
-
-}
-
-void initLoger() {
-
-}
-
 void initKernel() {
-
+    //Создаем загрузчик ядра
+    Kernel::getObject();
+    //Загружаем все наши плагины
+    Kernel::getObject()->getPluginLoader()->loadPlugins();
 }
 
 int startService() {
@@ -22,29 +19,7 @@ int startService() {
 
 
 int main() {
+    initKernel();
 
-    // initKernel();
-    // //Инициализируем конфиг
-    // initConfig();
-    // //Инициализируем лог файлы
-    // initLoger();
-    //
-    //
-    // return startService();
-
-    PluginLoader loader;
-    loader.loadPlugins();
-
-    FileRWPlugin* plugin = (FileRWPlugin*)loader.getPluginByName("FileRWPlugin");
-    FileEntity* file = plugin->openFile("/home/fakys/test.txt", new LineReadDriver(';'));
-
-    std::vector<uint8_t> buffer;
-    while (file->getReadDriver()->readFile(&buffer)) {
-        for (uint8_t a: buffer) {
-            std::cout << a;
-        }
-    }
-
-    file->closeFile();
-    return 0;
+    return startService();
 }

@@ -5,11 +5,21 @@
 #ifndef AVR_PROTO_LINUX_KERNEL_H
 #define AVR_PROTO_LINUX_KERNEL_H
 
-class Kernel {
+#include <string>
+
+#include "PluginLoader.h"
+#include "ProcessManager.h"
+#include "Patterns/Singleton.h"
+
+class Kernel : public Singleton<Kernel> {
+    private:
+        ProcessManager* processManager;
+        PluginLoader* pluginLoader;
     public:
     Kernel();
-    virtual void getAllPlugins();
-    virtual void getPluginByName(std::string name);
+    ProcessManager* getProcessManager();
+    PluginLoader* getPluginLoader();
+
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

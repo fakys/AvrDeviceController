@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named avr_proto_linux
+# Target rules for targets named AvrDeviceController
 
 # Build rule for target.
-avr_proto_linux: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 avr_proto_linux
-.PHONY : avr_proto_linux
+AvrDeviceController: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AvrDeviceController
+.PHONY : AvrDeviceController
 
 # fast build rule for target.
-avr_proto_linux/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/build
-.PHONY : avr_proto_linux/fast
+AvrDeviceController/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/build
+.PHONY : AvrDeviceController/fast
 
 src/Kernel.o: src/Kernel.cpp.o
 .PHONY : src/Kernel.o
 
 # target to build an object file
 src/Kernel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/Kernel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o
 .PHONY : src/Kernel.cpp.o
 
 src/Kernel.i: src/Kernel.cpp.i
@@ -142,7 +142,7 @@ src/Kernel.i: src/Kernel.cpp.i
 
 # target to preprocess a source file
 src/Kernel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/Kernel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.i
 .PHONY : src/Kernel.cpp.i
 
 src/Kernel.s: src/Kernel.cpp.s
@@ -150,7 +150,7 @@ src/Kernel.s: src/Kernel.cpp.s
 
 # target to generate assembly for a file
 src/Kernel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/Kernel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.s
 .PHONY : src/Kernel.cpp.s
 
 src/PluginLoader.o: src/PluginLoader.cpp.o
@@ -158,7 +158,7 @@ src/PluginLoader.o: src/PluginLoader.cpp.o
 
 # target to build an object file
 src/PluginLoader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/PluginLoader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o
 .PHONY : src/PluginLoader.cpp.o
 
 src/PluginLoader.i: src/PluginLoader.cpp.i
@@ -166,7 +166,7 @@ src/PluginLoader.i: src/PluginLoader.cpp.i
 
 # target to preprocess a source file
 src/PluginLoader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/PluginLoader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.i
 .PHONY : src/PluginLoader.cpp.i
 
 src/PluginLoader.s: src/PluginLoader.cpp.s
@@ -174,15 +174,39 @@ src/PluginLoader.s: src/PluginLoader.cpp.s
 
 # target to generate assembly for a file
 src/PluginLoader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/PluginLoader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.s
 .PHONY : src/PluginLoader.cpp.s
+
+src/ProcessManager/ProcessManager.o: src/ProcessManager/ProcessManager.cpp.o
+.PHONY : src/ProcessManager/ProcessManager.o
+
+# target to build an object file
+src/ProcessManager/ProcessManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o
+.PHONY : src/ProcessManager/ProcessManager.cpp.o
+
+src/ProcessManager/ProcessManager.i: src/ProcessManager/ProcessManager.cpp.i
+.PHONY : src/ProcessManager/ProcessManager.i
+
+# target to preprocess a source file
+src/ProcessManager/ProcessManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.i
+.PHONY : src/ProcessManager/ProcessManager.cpp.i
+
+src/ProcessManager/ProcessManager.s: src/ProcessManager/ProcessManager.cpp.s
+.PHONY : src/ProcessManager/ProcessManager.s
+
+# target to generate assembly for a file
+src/ProcessManager/ProcessManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.s
+.PHONY : src/ProcessManager/ProcessManager.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -190,7 +214,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -198,7 +222,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -209,13 +233,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... avr_proto_linux"
+	@echo "... AvrDeviceController"
 	@echo "... src/Kernel.o"
 	@echo "... src/Kernel.i"
 	@echo "... src/Kernel.s"
 	@echo "... src/PluginLoader.o"
 	@echo "... src/PluginLoader.i"
 	@echo "... src/PluginLoader.s"
+	@echo "... src/ProcessManager/ProcessManager.o"
+	@echo "... src/ProcessManager/ProcessManager.i"
+	@echo "... src/ProcessManager/ProcessManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/fakys/projects/avr_proto_linux/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/avr_proto_linux.dir/all
+all: CMakeFiles/AvrDeviceController.dir/all
 all: plugins/FileRWPlugin/all
 .PHONY : all
 
@@ -72,7 +72,7 @@ preinstall: plugins/FileRWPlugin/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/avr_proto_linux.dir/clean
+clean: CMakeFiles/AvrDeviceController.dir/clean
 clean: plugins/FileRWPlugin/clean
 .PHONY : clean
 
@@ -92,30 +92,30 @@ plugins/FileRWPlugin/clean:
 .PHONY : plugins/FileRWPlugin/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/avr_proto_linux.dir
+# Target rules for target CMakeFiles/AvrDeviceController.dir
 
 # All Build rule for target.
-CMakeFiles/avr_proto_linux.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=1,2,3,4 "Built target avr_proto_linux"
-.PHONY : CMakeFiles/avr_proto_linux.dir/all
+CMakeFiles/AvrDeviceController.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target AvrDeviceController"
+.PHONY : CMakeFiles/AvrDeviceController.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/avr_proto_linux.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/avr_proto_linux.dir/all
+CMakeFiles/AvrDeviceController.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AvrDeviceController.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 0
-.PHONY : CMakeFiles/avr_proto_linux.dir/rule
+.PHONY : CMakeFiles/AvrDeviceController.dir/rule
 
 # Convenience name for target.
-avr_proto_linux: CMakeFiles/avr_proto_linux.dir/rule
-.PHONY : avr_proto_linux
+AvrDeviceController: CMakeFiles/AvrDeviceController.dir/rule
+.PHONY : AvrDeviceController
 
 # clean rule for target.
-CMakeFiles/avr_proto_linux.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avr_proto_linux.dir/build.make CMakeFiles/avr_proto_linux.dir/clean
-.PHONY : CMakeFiles/avr_proto_linux.dir/clean
+CMakeFiles/AvrDeviceController.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/clean
+.PHONY : CMakeFiles/AvrDeviceController.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

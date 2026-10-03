@@ -26,29 +26,11 @@ class FileEntity {
         }
     };
 
-    AbstractReadDriver* getReadDriver() {
-        if (!readDriver) {
-            throw FileNotSupportedDriver("read driver not supported for this file");
-        }
-        return readDriver;
-    };
+    AbstractReadDriver* getReadDriver();
+    AbstractWriteDriver* getWriteDriver();
+    void closeFile();
 
-    AbstractWriteDriver* getWriteDriver() {
-        if (!writeDriver) {
-            throw FileNotSupportedDriver("write driver not supported for this file");
-        }
-        return writeDriver;
-    };
-
-    void closeFile() {
-        close(this->fileIndex);
-    }
-
-    ~FileEntity() {
-        if (this->fileIndex) {
-            this->closeFile();
-        }
-    }
+    ~FileEntity();
 };
 
 #endif //AVR_PROTO_LINUX_FILEENTITY_H
