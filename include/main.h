@@ -8,6 +8,5 @@
 #include <string>
 #include <iostream>
 
-#define PROJECT_NAME _PROJECT_NAME_
 
 #endif //AVR_PROTO_LINUX_MAIN_H

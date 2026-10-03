@@ -35,6 +35,14 @@ class FileRWPlugin: public AbstractPlugin {
     std::string getPluginName() override {
         return "FileRWPlugin";
     };
+
+    int pluginLoad() override {
+        return 0;
+    }
+
+    std::vector<std::string>* getDependPlugins() override {
+        return nullptr;
+    }
 };
 
 #define FileRWP "FileRWPlugin"

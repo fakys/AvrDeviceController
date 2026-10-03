@@ -8,8 +8,19 @@
 #include "PluginLoader.h"
 
 class ConfiguratePlugin :public AbstractPlugin {
-    std::string getPluginName() {
+    public:
+    std::string getPluginName() override {
         return "ConfiguratePlugin";
+    }
+
+    int pluginLoad() override {
+        return 0;
+    }
+
+    std::vector<std::string>* getDependPlugins() override {
+        return new std::vector<std::string>{
+            "FileRWPlugin"
+        };
     }
 };
 

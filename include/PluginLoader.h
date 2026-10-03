@@ -13,6 +13,8 @@
 class PluginLoader {
     private:
         static std::vector<AbstractPlugin*> plugins;
+
+        void loadPlugin(AbstractPlugin* plugin, std::vector<AbstractPlugin*>* contextPlugins);
     public:
         static void appendPlugin(AbstractPlugin* plugin) {
             plugins.push_back(plugin);
@@ -25,7 +27,7 @@ class PluginLoader {
             }
             return nullptr;
         }
-        virtual void loadPlugins();
+        void loadPlugins();
 
 };
 
