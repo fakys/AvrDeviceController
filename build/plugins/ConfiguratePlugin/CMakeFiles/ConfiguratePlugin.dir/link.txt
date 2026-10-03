@@ -1,0 +1,2 @@
+/usr/bin/ar qc libConfiguratePlugin.a CMakeFiles/ConfiguratePlugin.dir/src/ConfigurateLoader.cpp.o
+/usr/bin/ranlib libConfiguratePlugin.a

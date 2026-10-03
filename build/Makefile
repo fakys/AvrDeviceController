@@ -129,6 +129,104 @@ AvrDeviceController/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/build
 .PHONY : AvrDeviceController/fast
 
+#=============================================================================
+# Target rules for targets named FileRWPlugin
+
+# Build rule for target.
+FileRWPlugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 FileRWPlugin
+.PHONY : FileRWPlugin
+
+# fast build rule for target.
+FileRWPlugin/fast:
+	$(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build
+.PHONY : FileRWPlugin/fast
+
+#=============================================================================
+# Target rules for targets named ConfiguratePlugin
+
+# Build rule for target.
+ConfiguratePlugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConfiguratePlugin
+.PHONY : ConfiguratePlugin
+
+# fast build rule for target.
+ConfiguratePlugin/fast:
+	$(MAKE) $(MAKESILENT) -f plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build.make plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build
+.PHONY : ConfiguratePlugin/fast
+
+src/Arguments/ProcessArgument.o: src/Arguments/ProcessArgument.cpp.o
+.PHONY : src/Arguments/ProcessArgument.o
+
+# target to build an object file
+src/Arguments/ProcessArgument.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o
+.PHONY : src/Arguments/ProcessArgument.cpp.o
+
+src/Arguments/ProcessArgument.i: src/Arguments/ProcessArgument.cpp.i
+.PHONY : src/Arguments/ProcessArgument.i
+
+# target to preprocess a source file
+src/Arguments/ProcessArgument.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.i
+.PHONY : src/Arguments/ProcessArgument.cpp.i
+
+src/Arguments/ProcessArgument.s: src/Arguments/ProcessArgument.cpp.s
+.PHONY : src/Arguments/ProcessArgument.s
+
+# target to generate assembly for a file
+src/Arguments/ProcessArgument.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.s
+.PHONY : src/Arguments/ProcessArgument.cpp.s
+
+src/CommunicationDrivers/LinuxCommunicationInputDriver.o: src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.o
+
+# target to build an object file
+src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o
+
+src/CommunicationDrivers/LinuxCommunicationInputDriver.i: src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.i
+
+# target to preprocess a source file
+src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i
+
+src/CommunicationDrivers/LinuxCommunicationInputDriver.s: src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.s
+
+# target to generate assembly for a file
+src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s
+.PHONY : src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s
+
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.o: src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.o
+
+# target to build an object file
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o
+
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.i: src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.i
+
+# target to preprocess a source file
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i
+
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.s: src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.s
+
+# target to generate assembly for a file
+src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s
+.PHONY : src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s
+
 src/Kernel.o: src/Kernel.cpp.o
 .PHONY : src/Kernel.o
 
@@ -234,6 +332,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... AvrDeviceController"
+	@echo "... ConfiguratePlugin"
+	@echo "... FileRWPlugin"
+	@echo "... src/Arguments/ProcessArgument.o"
+	@echo "... src/Arguments/ProcessArgument.i"
+	@echo "... src/Arguments/ProcessArgument.s"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationInputDriver.o"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationInputDriver.i"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationInputDriver.s"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationOutputDriver.o"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationOutputDriver.i"
+	@echo "... src/CommunicationDrivers/LinuxCommunicationOutputDriver.s"
 	@echo "... src/Kernel.o"
 	@echo "... src/Kernel.i"
 	@echo "... src/Kernel.s"

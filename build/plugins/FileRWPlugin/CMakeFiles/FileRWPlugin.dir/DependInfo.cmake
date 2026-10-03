@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileRWPlugin.cpp" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o" "gcc" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o.d"
+  "/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileEntity.cpp" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o" "gcc" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o.d"
+  "/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/AllFileReadDriver.cpp" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o" "gcc" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o.d"
+  "/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/LineReadDriver.cpp" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o" "gcc" "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

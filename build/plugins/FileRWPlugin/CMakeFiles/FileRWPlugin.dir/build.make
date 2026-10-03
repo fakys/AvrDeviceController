@@ -69,31 +69,63 @@ include plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/progress.make
 # Include the compile flags for this target's objects.
 include plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/flags.make
 
-plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/flags.make
-plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o: /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileRWPlugin.cpp
-plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o"
-	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o -MF CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o.d -o CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o -c /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileRWPlugin.cpp
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/flags.make
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o: /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileEntity.cpp
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o -MF CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o.d -o CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o -c /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileEntity.cpp
 
-plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.i"
-	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileRWPlugin.cpp > CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.i
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.i"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileEntity.cpp > CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.i
 
-plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.s"
-	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileRWPlugin.cpp -o CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.s
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.s"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/FileEntity.cpp -o CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.s
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/flags.make
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o: /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/AllFileReadDriver.cpp
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o -MF CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o.d -o CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o -c /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/AllFileReadDriver.cpp
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.i"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/AllFileReadDriver.cpp > CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.i
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.s"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/AllFileReadDriver.cpp -o CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.s
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/flags.make
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o: /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/LineReadDriver.cpp
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o -MF CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o.d -o CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o -c /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/LineReadDriver.cpp
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.i"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/LineReadDriver.cpp > CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.i
+
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.s"
+	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/src/drivers/LineReadDriver.cpp -o CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.s
 
 # Object files for target FileRWPlugin
 FileRWPlugin_OBJECTS = \
-"CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o"
+"CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o" \
+"CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o" \
+"CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o"
 
 # External object files for target FileRWPlugin
 FileRWPlugin_EXTERNAL_OBJECTS =
 
-plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o
+plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o
+plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o
+plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o
 plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make
 plugins/FileRWPlugin/libFileRWPlugin.a: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libFileRWPlugin.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libFileRWPlugin.a"
 	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && $(CMAKE_COMMAND) -P CMakeFiles/FileRWPlugin.dir/cmake_clean_target.cmake
 	cd /home/fakys/projects/avr_proto_linux/build/plugins/FileRWPlugin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FileRWPlugin.dir/link.txt --verbose=$(VERBOSE)
 

@@ -1,6 +1,12 @@
 file(REMOVE_RECURSE
   "AvrDeviceController"
   "AvrDeviceController.pdb"
+  "CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o"
+  "CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o.d"
+  "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o"
+  "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o.d"
+  "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o"
+  "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o.d"
   "CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o"
   "CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o.d"
   "CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o"

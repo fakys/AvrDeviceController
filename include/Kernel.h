@@ -7,19 +7,25 @@
 
 #include <string>
 
+#include "Communication.h"
 #include "PluginLoader.h"
 #include "ProcessManager.h"
-#include "Patterns/Singleton.h"
+#include "Singleton.h"
+#include "ProcessArgument.h"
 
 class Kernel : public Singleton<Kernel> {
     private:
         ProcessManager* processManager;
         PluginLoader* pluginLoader;
+        ProcessArgument* processArgument;
+        Communication *communication;
     public:
     Kernel();
     ProcessManager* getProcessManager();
     PluginLoader* getPluginLoader();
-
+    void handleArguments(int argc, char* argv[]);
+    ProcessArgument* getProcessArgument();
+    Communication* getCommunication();
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

@@ -116,6 +116,92 @@ depend:
 	cd /home/fakys/projects/avr_proto_linux/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule
+.PHONY : plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule
+
+# Convenience name for target.
+FileRWPlugin: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule
+.PHONY : FileRWPlugin
+
+# fast build rule for target.
+FileRWPlugin/fast:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build
+.PHONY : FileRWPlugin/fast
+
+src/FileEntity.o: src/FileEntity.cpp.o
+.PHONY : src/FileEntity.o
+
+# target to build an object file
+src/FileEntity.cpp.o:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o
+.PHONY : src/FileEntity.cpp.o
+
+src/FileEntity.i: src/FileEntity.cpp.i
+.PHONY : src/FileEntity.i
+
+# target to preprocess a source file
+src/FileEntity.cpp.i:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.i
+.PHONY : src/FileEntity.cpp.i
+
+src/FileEntity.s: src/FileEntity.cpp.s
+.PHONY : src/FileEntity.s
+
+# target to generate assembly for a file
+src/FileEntity.cpp.s:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.s
+.PHONY : src/FileEntity.cpp.s
+
+src/drivers/AllFileReadDriver.o: src/drivers/AllFileReadDriver.cpp.o
+.PHONY : src/drivers/AllFileReadDriver.o
+
+# target to build an object file
+src/drivers/AllFileReadDriver.cpp.o:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o
+.PHONY : src/drivers/AllFileReadDriver.cpp.o
+
+src/drivers/AllFileReadDriver.i: src/drivers/AllFileReadDriver.cpp.i
+.PHONY : src/drivers/AllFileReadDriver.i
+
+# target to preprocess a source file
+src/drivers/AllFileReadDriver.cpp.i:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.i
+.PHONY : src/drivers/AllFileReadDriver.cpp.i
+
+src/drivers/AllFileReadDriver.s: src/drivers/AllFileReadDriver.cpp.s
+.PHONY : src/drivers/AllFileReadDriver.s
+
+# target to generate assembly for a file
+src/drivers/AllFileReadDriver.cpp.s:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.s
+.PHONY : src/drivers/AllFileReadDriver.cpp.s
+
+src/drivers/LineReadDriver.o: src/drivers/LineReadDriver.cpp.o
+.PHONY : src/drivers/LineReadDriver.o
+
+# target to build an object file
+src/drivers/LineReadDriver.cpp.o:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o
+.PHONY : src/drivers/LineReadDriver.cpp.o
+
+src/drivers/LineReadDriver.i: src/drivers/LineReadDriver.cpp.i
+.PHONY : src/drivers/LineReadDriver.i
+
+# target to preprocess a source file
+src/drivers/LineReadDriver.cpp.i:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.i
+.PHONY : src/drivers/LineReadDriver.cpp.i
+
+src/drivers/LineReadDriver.s: src/drivers/LineReadDriver.cpp.s
+.PHONY : src/drivers/LineReadDriver.s
+
+# target to generate assembly for a file
+src/drivers/LineReadDriver.cpp.s:
+	cd /home/fakys/projects/avr_proto_linux/build && $(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.s
+.PHONY : src/drivers/LineReadDriver.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +210,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... FileRWPlugin"
+	@echo "... src/FileEntity.o"
+	@echo "... src/FileEntity.i"
+	@echo "... src/FileEntity.s"
+	@echo "... src/drivers/AllFileReadDriver.o"
+	@echo "... src/drivers/AllFileReadDriver.i"
+	@echo "... src/drivers/AllFileReadDriver.s"
+	@echo "... src/drivers/LineReadDriver.o"
+	@echo "... src/drivers/LineReadDriver.i"
+	@echo "... src/drivers/LineReadDriver.s"
 .PHONY : help
 
 

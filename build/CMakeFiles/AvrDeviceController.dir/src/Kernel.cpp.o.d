@@ -116,6 +116,9 @@ CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
+ /home/fakys/projects/avr_proto_linux/include/Communication/Communication.h \
+ /home/fakys/projects/avr_proto_linux/include/Communication/drivers/CommunicationInputDriver.h \
+ /home/fakys/projects/avr_proto_linux/include/Communication/drivers/CommunicationOutputDriver.h \
  /home/fakys/projects/avr_proto_linux/include/PluginLoader.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
@@ -174,4 +177,7 @@ CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
- /home/fakys/projects/avr_proto_linux/include/Patterns/Singleton.h
+ /home/fakys/projects/avr_proto_linux/include/Patterns/Singleton.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ProcessArgument.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ArgTypes/ConfigPathArg.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ArgTypes/AbstractArgType.h

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -D_PROJECT_NAME_=AvrDeviceController
 
-CXX_INCLUDES = -I/home/fakys/projects/avr_proto_linux/include/ProcessManager -I/home/fakys/projects/avr_proto_linux/include/Patterns -isystem /home/fakys/projects/avr_proto_linux/include -isystem /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/drivers/abstracts -isystem /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/exceptions -isystem /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include
+CXX_INCLUDES = -I/home/fakys/projects/avr_proto_linux/include -I/home/fakys/projects/avr_proto_linux/include/ProcessManager -I/home/fakys/projects/avr_proto_linux/include/Patterns -I/home/fakys/projects/avr_proto_linux/include/Arguments -I/home/fakys/projects/avr_proto_linux/include/Communication -I/home/fakys/projects/avr_proto_linux/include/Communication/drivers -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/drivers/abstracts -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/exceptions -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include -I/home/fakys/projects/avr_proto_linux/plugins/ConfiguratePlugin/include -I/home/fakys/projects/avr_proto_linux/plugins/ConfiguratePlugin/include/ConfigEntity
 
 CXX_FLAGS = -std=gnu++17
 

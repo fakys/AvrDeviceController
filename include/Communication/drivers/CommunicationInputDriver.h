@@ -1,0 +1,12 @@
+//
+// Created by fakys on 03.10.2026.
+//
+
+#ifndef AVRDEVICECONTROLLER_ABSTRACTINPUTDRIVER_H
+#define AVRDEVICECONTROLLER_ABSTRACTINPUTDRIVER_H
+
+class CommunicationInputDriver {
+    public:
+};
+
+#endif //AVRDEVICECONTROLLER_ABSTRACTINPUTDRIVER_H

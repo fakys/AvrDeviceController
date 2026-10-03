@@ -159,6 +159,9 @@ CMakeFiles/AvrDeviceController.dir/src/main.cpp.o: \
  /home/fakys/projects/avr_proto_linux/include/main.h \
  /home/fakys/projects/avr_proto_linux/include/main.h \
  /home/fakys/projects/avr_proto_linux/include/Kernel.h \
+ /home/fakys/projects/avr_proto_linux/include/Communication/Communication.h \
+ /home/fakys/projects/avr_proto_linux/include/Communication/drivers/CommunicationInputDriver.h \
+ /home/fakys/projects/avr_proto_linux/include/Communication/drivers/CommunicationOutputDriver.h \
  /home/fakys/projects/avr_proto_linux/include/PluginLoader.h \
  /home/fakys/projects/avr_proto_linux/include/ProcessManager/ProcessManager.h \
  /home/fakys/projects/avr_proto_linux/include/ProcessManager/ProcessEntity.h \
@@ -175,6 +178,9 @@ CMakeFiles/AvrDeviceController.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
  /home/fakys/projects/avr_proto_linux/include/Patterns/Singleton.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ProcessArgument.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ArgTypes/ConfigPathArg.h \
+ /home/fakys/projects/avr_proto_linux/include/Arguments/ArgTypes/AbstractArgType.h \
  /home/fakys/projects/avr_proto_linux/include/plugins.h \
  /home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/FileRWPlugin.h \
  /home/fakys/projects/avr_proto_linux/include/AbstractPlugin.h \

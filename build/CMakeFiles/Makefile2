@@ -65,22 +65,40 @@ CMAKE_BINARY_DIR = /home/fakys/projects/avr_proto_linux/build
 # The main recursive "all" target.
 all: CMakeFiles/AvrDeviceController.dir/all
 all: plugins/FileRWPlugin/all
+all: plugins/ConfiguratePlugin/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: plugins/FileRWPlugin/preinstall
+preinstall: plugins/ConfiguratePlugin/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/AvrDeviceController.dir/clean
 clean: plugins/FileRWPlugin/clean
+clean: plugins/ConfiguratePlugin/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory plugins/ConfiguratePlugin
+
+# Recursive "all" directory target.
+plugins/ConfiguratePlugin/all: plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/all
+.PHONY : plugins/ConfiguratePlugin/all
+
+# Recursive "preinstall" directory target.
+plugins/ConfiguratePlugin/preinstall:
+.PHONY : plugins/ConfiguratePlugin/preinstall
+
+# Recursive "clean" directory target.
+plugins/ConfiguratePlugin/clean: plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/clean
+.PHONY : plugins/ConfiguratePlugin/clean
 
 #=============================================================================
 # Directory level rules for directory plugins/FileRWPlugin
 
 # Recursive "all" directory target.
-plugins/FileRWPlugin/all:
+plugins/FileRWPlugin/all: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/all
 .PHONY : plugins/FileRWPlugin/all
 
 # Recursive "preinstall" directory target.
@@ -88,22 +106,23 @@ plugins/FileRWPlugin/preinstall:
 .PHONY : plugins/FileRWPlugin/preinstall
 
 # Recursive "clean" directory target.
-plugins/FileRWPlugin/clean:
+plugins/FileRWPlugin/clean: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/clean
 .PHONY : plugins/FileRWPlugin/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/AvrDeviceController.dir
 
 # All Build rule for target.
-CMakeFiles/AvrDeviceController.dir/all:
+CMakeFiles/AvrDeviceController.dir/all: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/all
+CMakeFiles/AvrDeviceController.dir/all: plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target AvrDeviceController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target AvrDeviceController"
 .PHONY : CMakeFiles/AvrDeviceController.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AvrDeviceController.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AvrDeviceController.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 0
 .PHONY : CMakeFiles/AvrDeviceController.dir/rule
@@ -116,6 +135,58 @@ AvrDeviceController: CMakeFiles/AvrDeviceController.dir/rule
 CMakeFiles/AvrDeviceController.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AvrDeviceController.dir/build.make CMakeFiles/AvrDeviceController.dir/clean
 .PHONY : CMakeFiles/AvrDeviceController.dir/clean
+
+#=============================================================================
+# Target rules for target plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir
+
+# All Build rule for target.
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=11,12,13,14 "Built target FileRWPlugin"
+.PHONY : plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/all
+
+# Build rule for subdir invocation for target.
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 0
+.PHONY : plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule
+
+# Convenience name for target.
+FileRWPlugin: plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/rule
+.PHONY : FileRWPlugin
+
+# clean rule for target.
+plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/build.make plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/clean
+.PHONY : plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/clean
+
+#=============================================================================
+# Target rules for target plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir
+
+# All Build rule for target.
+plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/all:
+	$(MAKE) $(MAKESILENT) -f plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build.make plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/depend
+	$(MAKE) $(MAKESILENT) -f plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build.make plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=9,10 "Built target ConfiguratePlugin"
+.PHONY : plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/all
+
+# Build rule for subdir invocation for target.
+plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fakys/projects/avr_proto_linux/build/CMakeFiles 0
+.PHONY : plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/rule
+
+# Convenience name for target.
+ConfiguratePlugin: plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/rule
+.PHONY : ConfiguratePlugin
+
+# clean rule for target.
+plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/clean:
+	$(MAKE) $(MAKESILENT) -f plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/build.make plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/clean
+.PHONY : plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

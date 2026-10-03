@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
+  "/home/fakys/projects/avr_proto_linux/plugins/ConfiguratePlugin/CMakeLists.txt"
   "/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/CMakeLists.txt"
   "/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
@@ -42,9 +43,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "plugins/FileRWPlugin/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "plugins/ConfiguratePlugin/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/AvrDeviceController.dir/DependInfo.cmake"
+  "plugins/FileRWPlugin/CMakeFiles/FileRWPlugin.dir/DependInfo.cmake"
+  "plugins/ConfiguratePlugin/CMakeFiles/ConfiguratePlugin.dir/DependInfo.cmake"
   )

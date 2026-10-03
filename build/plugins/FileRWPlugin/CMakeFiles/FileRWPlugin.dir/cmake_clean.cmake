@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o"
-  "CMakeFiles/FileRWPlugin.dir/src/FileRWPlugin.cpp.o.d"
+  "CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o"
+  "CMakeFiles/FileRWPlugin.dir/src/FileEntity.cpp.o.d"
+  "CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o"
+  "CMakeFiles/FileRWPlugin.dir/src/drivers/AllFileReadDriver.cpp.o.d"
+  "CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o"
+  "CMakeFiles/FileRWPlugin.dir/src/drivers/LineReadDriver.cpp.o.d"
   "libFileRWPlugin.a"
   "libFileRWPlugin.pdb"
 )

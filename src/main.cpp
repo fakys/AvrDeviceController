@@ -5,9 +5,12 @@
 #include "plugins.h"
 #include "drivers/LineReadDriver.h"
 
-void initKernel() {
+void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
     Kernel::getObject();
+    Kernel::getObject()->handleArguments(argc, argv);
+
+    std::cout<<Kernel::getObject()->getProcessArgument()->getConfigPathArg()->getValue();
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();
 }
@@ -18,8 +21,8 @@ int startService() {
 }
 
 
-int main() {
-    initKernel();
+int main(int argc, char* argv[]) {
+    initKernel(argc, argv);
 
     return startService();
 }

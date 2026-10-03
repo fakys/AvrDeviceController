@@ -8,6 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/fakys/projects/avr_proto_linux/src/Arguments/ProcessArgument.cpp" "CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o.d"
+  "/home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp" "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o.d"
+  "/home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp" "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o.d"
   "/home/fakys/projects/avr_proto_linux/src/Kernel.cpp" "CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o.d"
   "/home/fakys/projects/avr_proto_linux/src/PluginLoader.cpp" "CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o.d"
   "/home/fakys/projects/avr_proto_linux/src/ProcessManager/ProcessManager.cpp" "CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o" "gcc" "CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o.d"

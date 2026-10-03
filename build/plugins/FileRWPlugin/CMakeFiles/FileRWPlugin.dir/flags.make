@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/fakys/projects/avr_proto_linux/include -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include
+CXX_INCLUDES = -I/home/fakys/projects/avr_proto_linux/include -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/drivers/abstracts -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include/exceptions -I/home/fakys/projects/avr_proto_linux/plugins/FileRWPlugin/include
 
-CXX_FLAGS = 
+CXX_FLAGS = -std=gnu++17
 

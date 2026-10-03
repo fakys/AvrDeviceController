@@ -69,10 +69,52 @@ include CMakeFiles/AvrDeviceController.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AvrDeviceController.dir/flags.make
 
+CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
+CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o: /home/fakys/projects/avr_proto_linux/src/Arguments/ProcessArgument.cpp
+CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o -c /home/fakys/projects/avr_proto_linux/src/Arguments/ProcessArgument.cpp
+
+CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/src/Arguments/ProcessArgument.cpp > CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.i
+
+CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/src/Arguments/ProcessArgument.cpp -o CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.s
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o: /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o -c /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp > CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.i
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp -o CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.s
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o: /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o -c /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp > CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.i
+
+CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fakys/projects/avr_proto_linux/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp -o CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.s
+
 CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
 CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o: /home/fakys/projects/avr_proto_linux/src/Kernel.cpp
 CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o -c /home/fakys/projects/avr_proto_linux/src/Kernel.cpp
 
 CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.i: cmake_force
@@ -86,7 +128,7 @@ CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.s: cmake_force
 CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
 CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o: /home/fakys/projects/avr_proto_linux/src/PluginLoader.cpp
 CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o -c /home/fakys/projects/avr_proto_linux/src/PluginLoader.cpp
 
 CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.i: cmake_force
@@ -100,7 +142,7 @@ CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.s: cmake_force
 CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
 CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o: /home/fakys/projects/avr_proto_linux/src/ProcessManager/ProcessManager.cpp
 CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o -c /home/fakys/projects/avr_proto_linux/src/ProcessManager/ProcessManager.cpp
 
 CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.i: cmake_force
@@ -114,7 +156,7 @@ CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.s: cmak
 CMakeFiles/AvrDeviceController.dir/src/main.cpp.o: CMakeFiles/AvrDeviceController.dir/flags.make
 CMakeFiles/AvrDeviceController.dir/src/main.cpp.o: /home/fakys/projects/avr_proto_linux/src/main.cpp
 CMakeFiles/AvrDeviceController.dir/src/main.cpp.o: CMakeFiles/AvrDeviceController.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AvrDeviceController.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AvrDeviceController.dir/src/main.cpp.o -MF CMakeFiles/AvrDeviceController.dir/src/main.cpp.o.d -o CMakeFiles/AvrDeviceController.dir/src/main.cpp.o -c /home/fakys/projects/avr_proto_linux/src/main.cpp
 
 CMakeFiles/AvrDeviceController.dir/src/main.cpp.i: cmake_force
@@ -127,6 +169,9 @@ CMakeFiles/AvrDeviceController.dir/src/main.cpp.s: cmake_force
 
 # Object files for target AvrDeviceController
 AvrDeviceController_OBJECTS = \
+"CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o" \
+"CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o" \
+"CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o" \
 "CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o" \
 "CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o" \
 "CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o" \
@@ -135,13 +180,18 @@ AvrDeviceController_OBJECTS = \
 # External object files for target AvrDeviceController
 AvrDeviceController_EXTERNAL_OBJECTS =
 
+AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/Arguments/ProcessArgument.cpp.o
+AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationInputDriver.cpp.o
+AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/CommunicationDrivers/LinuxCommunicationOutputDriver.cpp.o
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/Kernel.cpp.o
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/PluginLoader.cpp.o
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/ProcessManager/ProcessManager.cpp.o
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/src/main.cpp.o
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/build.make
+AvrDeviceController: plugins/FileRWPlugin/libFileRWPlugin.a
+AvrDeviceController: plugins/ConfiguratePlugin/libConfiguratePlugin.a
 AvrDeviceController: CMakeFiles/AvrDeviceController.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable AvrDeviceController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fakys/projects/avr_proto_linux/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable AvrDeviceController"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AvrDeviceController.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
