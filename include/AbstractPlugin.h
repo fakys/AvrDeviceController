@@ -7,10 +7,20 @@
 #include "main.h"
 
 class AbstractPlugin {
+private:
+    bool pluginLoaded = false;
 public:
     virtual std::string getPluginName() = 0;
     virtual std::vector<std::string>* getDependPlugins()=0;
     virtual int pluginLoad() = 0;
+
+    void pluginIsLoaded() {
+        pluginLoaded = true;
+    }
+
+    bool getPluginLoaded() {
+        return pluginLoaded;
+    }
 };
 
 #endif //AVR_PROTO_LINUX_ABSTRACTPLUGIN_H

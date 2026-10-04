@@ -5,7 +5,8 @@
 #ifndef AVR_PROTO_LINUX_PLUGINS_H
 #define AVR_PROTO_LINUX_PLUGINS_H
 
-#include "FileRWPlugin.h"
 #include "ConfiguratePlugin.h"
+#include "FileRWPlugin.h"
+
 
 #endif //AVR_PROTO_LINUX_PLUGINS_H

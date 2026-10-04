@@ -37,6 +37,7 @@ class FileRWPlugin: public AbstractPlugin {
     };
 
     int pluginLoad() override {
+        std::cout << "Loading FileRWPlugin" << std::endl;
         return 0;
     }
 

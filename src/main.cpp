@@ -9,8 +9,6 @@ void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
     Kernel::getObject();
     Kernel::getObject()->handleArguments(argc, argv);
-
-    std::cout<<Kernel::getObject()->getProcessArgument()->getConfigPathArg()->getValue();
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();
 }

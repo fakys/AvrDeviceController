@@ -14,7 +14,7 @@ class PluginLoader {
     private:
         static std::vector<AbstractPlugin*> plugins;
 
-        void loadPlugin(AbstractPlugin* plugin, std::vector<AbstractPlugin*>* contextPlugins);
+        void loadPlugin(AbstractPlugin* plugin);
     public:
         static void appendPlugin(AbstractPlugin* plugin) {
             plugins.push_back(plugin);

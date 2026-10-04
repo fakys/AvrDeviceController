@@ -14,6 +14,7 @@ class ConfiguratePlugin :public AbstractPlugin {
     }
 
     int pluginLoad() override {
+        std::cout << "dasd"<< std::endl;
         return 0;
     }
 

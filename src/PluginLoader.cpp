@@ -8,31 +8,31 @@
 std::vector<AbstractPlugin*> PluginLoader::plugins;
 
 void PluginLoader::loadPlugins() {
-    std::vector<AbstractPlugin*> contextPlugins = PluginLoader::plugins;
 
-    for (AbstractPlugin* plugin : contextPlugins) {
-        this->loadPlugin(plugin, &contextPlugins);
+    for (AbstractPlugin* plugin : PluginLoader::plugins) {
+        this->loadPlugin(plugin);
     }
 }
 
 
-void PluginLoader::loadPlugin(AbstractPlugin* plugin, std::vector<AbstractPlugin*>* contextPlugins) {
-    if (!plugin->getDependPlugins()->empty()) {
-        for (std::string dependsPluginName : *plugin->getDependPlugins()) {
-            for (AbstractPlugin* dependsPlugin : *contextPlugins) {
-                if (dependsPlugin->getPluginName() == dependsPluginName) {
-                    this->loadPlugin(dependsPlugin, contextPlugins);
+void PluginLoader::loadPlugin(AbstractPlugin* plugin) {
+    if (!plugin->getPluginLoaded()) {
+        if (plugin->getDependPlugins() && !plugin->getDependPlugins()->empty()) {
+            for (std::string dependsPluginName : *plugin->getDependPlugins()) {
+                //todo проверять что плагин был найден, если нет то ошибка
+                for (AbstractPlugin* dependsPlugin : PluginLoader::plugins) {
+                    if (dependsPlugin->getPluginName() == dependsPluginName) {
+                        this->loadPlugin(dependsPlugin);
+                    }
                 }
             }
         }
-    }
 
-    if (plugin->pluginLoad() < 0) {
-        //todo Ошибка
-    }
-
-    auto it = std::find(contextPlugins->begin(), contextPlugins->end(), plugin);
-    if (it != contextPlugins->end()) {
-        contextPlugins->erase(it);
+        //Загружаем плагин
+        if (plugin->pluginLoad() < 0) {
+            //todo Ошибка
+        }
+        //Ставим метку что он уже загружен
+        plugin->pluginIsLoaded();
     }
 }
