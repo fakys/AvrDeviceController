@@ -1,9 +1,8 @@
-#include "PluginLoader.h"
 #include "main.h"
+#include "plugins.h"
 
 #include "Kernel.h"
-#include "plugins.h"
-#include "drivers/LineReadDriver.h"
+#include "PluginLoader.h"
 
 void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
@@ -20,7 +19,11 @@ int startService() {
 
 
 int main(int argc, char* argv[]) {
-    initKernel(argc, argv);
-
-    return startService();
+    try {
+        initKernel(argc, argv);
+        return startService();
+    } catch (MainException &e) {
+        Kernel::getObject()->getCommunication()->sendOutputErrorMessage(e.getMessage());
+        return -1;
+    }
 }

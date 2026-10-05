@@ -6,16 +6,23 @@
 #define AVRDEVICECONTROLLER_CONFIGURATEPLUGIN_H
 #include "AbstractPlugin.h"
 #include "PluginLoader.h"
+#include "ConfigurateLoader.h"
+
 
 class ConfiguratePlugin :public AbstractPlugin {
+    private:
+        ConfigurateLoader* configurateLoader;
     public:
+    ConfiguratePlugin() {
+        this->configurateLoader = new ConfigurateLoader();
+    }
+
     std::string getPluginName() override {
         return "ConfiguratePlugin";
     }
 
     int pluginLoad() override {
-        std::cout << "dasd"<< std::endl;
-        return 0;
+        return this->configurateLoader->checkConfig() ? 0 : -1;
     }
 
     std::vector<std::string>* getDependPlugins() override {
@@ -24,7 +31,5 @@ class ConfiguratePlugin :public AbstractPlugin {
         };
     }
 };
-
-registerPlugin(ConfiguratePlugin);
 
 #endif //AVRDEVICECONTROLLER_CONFIGURATEPLUGIN_H

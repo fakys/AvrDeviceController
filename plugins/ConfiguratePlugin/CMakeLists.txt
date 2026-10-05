@@ -13,3 +13,6 @@ target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Arguments)
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Communication)
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Communication/drivers)
+
+
+target_link_libraries(ConfiguratePlugin PUBLIC FileRWPlugin)

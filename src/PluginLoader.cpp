@@ -3,24 +3,28 @@
 //
 
 #include "PluginLoader.h"
-#include <algorithm>
+#include "plugins.h"
+#include "FailLoadPluginException.h"
 
-std::vector<AbstractPlugin*> PluginLoader::plugins;
 
 void PluginLoader::loadPlugins() {
-
-    for (AbstractPlugin* plugin : PluginLoader::plugins) {
+    for (AbstractPlugin* plugin : *this->plugins) {
         this->loadPlugin(plugin);
     }
 }
 
+PluginLoader::PluginLoader() {
+    this->plugins = new std::vector<AbstractPlugin*>{
+        ALL_PLUGIN_OBJECTS
+    };
+}
 
 void PluginLoader::loadPlugin(AbstractPlugin* plugin) {
     if (!plugin->getPluginLoaded()) {
         if (plugin->getDependPlugins() && !plugin->getDependPlugins()->empty()) {
             for (std::string dependsPluginName : *plugin->getDependPlugins()) {
                 //todo проверять что плагин был найден, если нет то ошибка
-                for (AbstractPlugin* dependsPlugin : PluginLoader::plugins) {
+                for (AbstractPlugin* dependsPlugin : *this->plugins) {
                     if (dependsPlugin->getPluginName() == dependsPluginName) {
                         this->loadPlugin(dependsPlugin);
                     }
@@ -30,7 +34,7 @@ void PluginLoader::loadPlugin(AbstractPlugin* plugin) {
 
         //Загружаем плагин
         if (plugin->pluginLoad() < 0) {
-            //todo Ошибка
+            throw FailLoadPluginException("Fail load plugin: "+plugin->getPluginName());
         }
         //Ставим метку что он уже загружен
         plugin->pluginIsLoaded();

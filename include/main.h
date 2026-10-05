@@ -7,6 +7,6 @@
 
 #include <string>
 #include <iostream>
-
+#include <vector>
 
 #endif //AVR_PROTO_LINUX_MAIN_H

@@ -1,12 +1,12 @@
 #ifndef AVR_PROTO_LINUX_FILERWPLUGIN_H
 #define AVR_PROTO_LINUX_FILERWPLUGIN_H
 
-#include "AbstractPlugin.h"
 #include "FileEntity.h"
-#include "PluginLoader.h"
 #include "AbstractReadDriver.h"
 #include <fcntl.h>
 #include "AbstractWriteDriver.h"
+#include <sys/stat.h>
+#include "UndefinedFileException.h"
 
 
 class FileRWPlugin: public AbstractPlugin {
@@ -32,12 +32,28 @@ class FileRWPlugin: public AbstractPlugin {
         }
         return new FileEntity(fileIndex, flag, readDriver, writeDriver);
     }
+
+    bool checkAccessFile(std::string filePath) {
+        struct stat buffer;
+        if (stat(&filePath[0], &buffer) == 0) {
+            if (!S_ISREG(buffer.st_mode)) {
+                throw FileErrorException("Path "+filePath+" is not a file", errno);
+            }
+            return true;
+        } else {
+            if (errno == ENOENT) {
+                throw UndefinedFileException("file "+filePath+" not found");
+            } else {
+                throw FileErrorException("fail to check file "+filePath, errno);
+            }
+        }
+    }
+
     std::string getPluginName() override {
         return "FileRWPlugin";
     };
 
     int pluginLoad() override {
-        std::cout << "Loading FileRWPlugin" << std::endl;
         return 0;
     }
 
@@ -47,7 +63,5 @@ class FileRWPlugin: public AbstractPlugin {
 };
 
 #define FileRWP "FileRWPlugin"
-
-registerPlugin(FileRWPlugin)
 
 #endif
