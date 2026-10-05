@@ -12,6 +12,10 @@ class ConfigLogErrorPathEntity :public AbstractConfigEntity {
         bool requiredField() override {
             return true;
         }
+
+        bool isGroup() override {
+            return false;
+        }
 };
 
 

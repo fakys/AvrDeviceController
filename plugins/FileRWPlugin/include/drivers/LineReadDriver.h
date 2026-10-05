@@ -2,13 +2,14 @@
 #define AVR_PROTO_LINUX_LINEREADDRIVER_H
 #include "AbstractReadDriver.h"
 #include <unistd.h>
+#include <algorithm>
 
 class LineReadDriver: public AbstractReadDriver {
     private:
-        uint8_t separator;
+        std::vector<uint8_t> separators;
         int currentLine = 0;
     public:
-        LineReadDriver(uint8_t separator = '\n') : separator(separator), AbstractReadDriver() {
+        LineReadDriver(std::vector<uint8_t>&& separators) : separators(std::move(separators)), AbstractReadDriver() {
         }
 
         bool readFile(std::vector<uint8_t>* buffer) override {
@@ -22,7 +23,10 @@ class LineReadDriver: public AbstractReadDriver {
             while ((bytes_read = read(this->fileIndex, &byte, 1)) > 0) {
                 if (line == 0) {
                     buffer->push_back(byte);
-                    if (byte == separator) {
+
+                    auto it = std::find(separators.begin(), separators.end(), byte);
+                    if (it != separators.end())
+                    {
                         currentLine++;
                         break;
                     }

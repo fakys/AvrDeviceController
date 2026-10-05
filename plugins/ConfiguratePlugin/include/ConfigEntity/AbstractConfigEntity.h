@@ -20,6 +20,7 @@ class AbstractConfigEntity {
     }
 
     virtual bool requiredField() = 0;
+    virtual bool isGroup() = 0;
 
     virtual ~AbstractConfigEntity()=default;
 };

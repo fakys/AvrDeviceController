@@ -8,6 +8,7 @@
 #include "LineReadDriver.h"
 #include "ConfigurateException.h"
 #include "string_helpers.h"
+#include "ConfigHttpPort.h"
 
 ConfigurateLoader::ConfigurateLoader() = default;
 
@@ -30,13 +31,16 @@ Configurate* ConfigurateLoader::loadConfig() {
     auto* acceptLogPath = new ConfigLogAcceptPathEntity();
     auto* errorLogPath = new ConfigLogErrorPathEntity();
     auto* logLevel = new ConfigLogLevelEntity();
+    auto* httpPort = new ConfigHttpPort();
+
     std::vector<AbstractConfigEntity*> paramsVector {
         acceptLogPath,
         errorLogPath,
-        logLevel
+        logLevel,
+        httpPort
     };
 
-    FileEntity* file = plugin->openFile(this->configPath, new LineReadDriver(';'));
+    FileEntity* file = plugin->openFile(this->configPath, new LineReadDriver(std::vector<uint8_t>{';', '[', ']', '{', '}'}));
     if (!file) {
         throw ConfigurateException("Fail open config file");
     }
@@ -78,5 +82,5 @@ Configurate* ConfigurateLoader::loadConfig() {
         }
     }
 
-    return nullptr;
+    return new Configurate(acceptLogPath, errorLogPath, logLevel, httpPort);
 }

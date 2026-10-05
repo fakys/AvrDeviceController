@@ -11,6 +11,10 @@ class ConfigLogLevelEntity : public AbstractConfigEntity {
     bool requiredField() override {
         return false;
     }
+
+    bool isGroup() override {
+        return false;
+    }
 };
 
 #endif

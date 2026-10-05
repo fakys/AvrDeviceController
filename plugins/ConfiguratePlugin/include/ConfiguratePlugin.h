@@ -12,6 +12,7 @@
 class ConfiguratePlugin :public AbstractPlugin {
     private:
         ConfigurateLoader* configurateLoader;
+        Configurate* config;
     public:
     ConfiguratePlugin() {
         this->configurateLoader = new ConfigurateLoader();
@@ -25,8 +26,12 @@ class ConfiguratePlugin :public AbstractPlugin {
         if (!this->configurateLoader->checkConfig()) {
             return -1;
         }
-        this->configurateLoader->loadConfig();
+        this->config = this->configurateLoader->loadConfig();
         return 0;
+    }
+
+    Configurate* getConfigurate() {
+        return this->config;
     }
 
     std::vector<std::string>* getDependPlugins() override {
