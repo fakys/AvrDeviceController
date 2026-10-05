@@ -10,9 +10,7 @@ class AbstractConfigEntity {
     private:
     std::string value;
     public:
-    virtual std::string getConfigName() {
-        return "";
-    }
+    virtual std::string getConfigName()=0;
     void setValue(std::string v) {
         this->value = v;
     }
@@ -20,6 +18,8 @@ class AbstractConfigEntity {
     std::string getValue() {
         return value;
     }
+
+    virtual bool requiredField() = 0;
 
     virtual ~AbstractConfigEntity()=default;
 };

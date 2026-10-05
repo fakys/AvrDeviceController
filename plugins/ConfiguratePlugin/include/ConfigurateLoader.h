@@ -8,6 +8,8 @@
 #include "Configurate.h"
 
 class ConfigurateLoader {
+    private:
+        std::string configPath;
     public:
     ConfigurateLoader();
     bool checkConfig();

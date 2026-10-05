@@ -22,7 +22,11 @@ class ConfiguratePlugin :public AbstractPlugin {
     }
 
     int pluginLoad() override {
-        return this->configurateLoader->checkConfig() ? 0 : -1;
+        if (!this->configurateLoader->checkConfig()) {
+            return -1;
+        }
+        std::cout << this->configurateLoader->loadConfig() << std::endl;
+        return 0;
     }
 
     std::vector<std::string>* getDependPlugins() override {

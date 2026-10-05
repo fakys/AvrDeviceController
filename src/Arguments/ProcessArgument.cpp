@@ -40,7 +40,6 @@ void ProcessArgument::parseArguments() {
              value.erase(0, value.find('=')+1);
 
              arg.erase(arg.find('='));
-
          }
 
          for (AbstractArgType* type : this->argTypes) {

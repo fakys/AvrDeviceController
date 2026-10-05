@@ -8,6 +8,10 @@ class ConfigLogErrorPathEntity :public AbstractConfigEntity {
         std::string getConfigName() override {
             return "error_log_path";
         }
+
+        bool requiredField() override {
+            return true;
+        }
 };
 
 

@@ -7,6 +7,9 @@ class ConfigLogAcceptPathEntity :public AbstractConfigEntity {
         std::string getConfigName() override {
             return "accept_log_path";
         }
+        bool requiredField() override {
+            return true;
+        }
 };
 
 #endif

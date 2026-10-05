@@ -7,6 +7,10 @@ class ConfigLogLevelEntity : public AbstractConfigEntity {
     std::string getConfigName() override {
         return "log_level";
     }
+
+    bool requiredField() override {
+        return false;
+    }
 };
 
 #endif
