@@ -73,7 +73,6 @@ Configurate* ConfigurateLoader::loadConfig() {
     }
 
     for (AbstractConfigEntity* entity : paramsVector) {
-        std::cout << entity->getValue() <<std::endl;
         if (entity->requiredField() && entity->getValue().empty()) {
             throw ConfigurateException("Undefined required param " + entity->getConfigName() +" in configuration");
         }

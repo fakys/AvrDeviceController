@@ -1,8 +1,5 @@
 #include "ProcessArgument.h"
 
-#include <cstring>
-#include <bits/locale_facets_nonio.h>
-
 #include "Kernel.h"
 
 
@@ -47,7 +44,7 @@ void ProcessArgument::parseArguments() {
 
                  if (abbreviation && type->getAbbreviation() == arg || !abbreviation && type->getArgName() == arg) {
                      type->setValue(value);
-                     return;
+                     break;
                  }
              }
          }
@@ -61,6 +58,8 @@ ProcessArgument::ProcessArgument(int argc, char** argv)  {
 
     this->configPathArg = new ConfigPathArg();
     this->argTypes.push_back(this->configPathArg);
+    this->demon = new DemonArg();
+    this->argTypes.push_back(this->demon);
 
     this->parseArguments();
 }

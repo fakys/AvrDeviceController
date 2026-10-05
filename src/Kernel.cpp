@@ -5,17 +5,12 @@
 
 #include "Kernel.h"
 Kernel::Kernel() {
-    this->processManager = new ProcessManager();
     this->pluginLoader = new PluginLoader();
     this->communication = new Communication();
 }
 
 PluginLoader *Kernel::getPluginLoader() {
     return this->pluginLoader;
-}
-
-ProcessManager *Kernel::getProcessManager() {
-    return this->processManager;
 }
 
 void Kernel::handleArguments(int argc, char* argv[]) {

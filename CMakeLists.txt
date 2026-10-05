@@ -22,7 +22,6 @@ add_definitions(-D_PROJECT_NAME_="AvrDeviceController")
 add_definitions(-D_PROJECT_CONFIG_PATH_="/etc/avr_device_controller/main.conf")
 
 target_include_directories(AvrDeviceController PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(AvrDeviceController PUBLIC ${CMAKE_SOURCE_DIR}/include/ProcessManager)
 target_include_directories(AvrDeviceController PUBLIC ${CMAKE_SOURCE_DIR}/include/Exceptions)
 target_include_directories(AvrDeviceController PUBLIC ${CMAKE_SOURCE_DIR}/include/Patterns)
 target_include_directories(AvrDeviceController PUBLIC ${CMAKE_SOURCE_DIR}/include/Arguments)

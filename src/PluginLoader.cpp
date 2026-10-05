@@ -5,6 +5,7 @@
 #include "PluginLoader.h"
 #include "plugins.h"
 #include "FailLoadPluginException.h"
+#include "Kernel.h"
 
 
 void PluginLoader::loadPlugins() {
@@ -32,6 +33,7 @@ void PluginLoader::loadPlugin(AbstractPlugin* plugin) {
             }
         }
 
+        Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Init plugin: "+plugin->getPluginName());
         //Загружаем плагин
         if (plugin->pluginLoad() < 0) {
             throw FailLoadPluginException("Fail load plugin: "+plugin->getPluginName());

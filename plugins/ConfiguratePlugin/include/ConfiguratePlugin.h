@@ -25,7 +25,7 @@ class ConfiguratePlugin :public AbstractPlugin {
         if (!this->configurateLoader->checkConfig()) {
             return -1;
         }
-        std::cout << this->configurateLoader->loadConfig() << std::endl;
+        this->configurateLoader->loadConfig();
         return 0;
     }
 
