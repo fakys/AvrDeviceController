@@ -36,24 +36,27 @@ Configurate* ConfigurateLoader::loadConfig() {
 
     //Читаем конфиг по одной строке, формат ключ=значение
     std::vector<uint8_t> buffer;
+    Configurate* config = nullptr;
     while (file->getReadDriver()->readFile(&buffer)) {
-        PropertyParser* property = propertyParser(buffer);
-        if (property) {
-            if (property->propertyName == "configurate" || property->propertyName == "config") {
-                if (property->propertyValueType == PROPERTY_VALUE_OBJECT_TYPE) {
-                    //todo создаем конфиг
-                    std::cout << "Зашел" << std::endl;
+        if (!config) {
+            PropertyParser* property = propertyParser(buffer);
+            if (property) {
+                if (property->propertyName == "configurate" || property->propertyName == "config") {
+                    if (property->propertyValueType == PROPERTY_VALUE_OBJECT_TYPE) {
+                        config = new Configurate();
+                    } else {
+                        throw ConfigurateException("Property: "+ property->propertyName + " only object type");
+                    }
                 } else {
-                    throw ConfigurateException("Property: "+ property->propertyName + " only object type");
+                    throw ConfigurateException("Incorrect property name: " + property->propertyName + " please use configurate or config");
                 }
-            } else {
-                throw ConfigurateException("Incorrect property name: " + property->propertyName + " please use configurate or config");
             }
+            delete property;
         } else {
-            std::cout << "Зашел 2" << std::endl;
+            if (!config->isCompleted()) {
+                config->handelRow(buffer);
+            }
         }
-
-        delete property;
     }
-    return nullptr;
+    return config;
 }

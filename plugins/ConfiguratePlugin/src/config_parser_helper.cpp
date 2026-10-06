@@ -3,6 +3,9 @@
 //
 #include "config_parser_helper.h"
 
+#include <iostream>
+#include <ostream>
+
 #include "ConfigurateException.h"
 
 
@@ -30,6 +33,7 @@ PropertyParser* propertyParser(std::vector<uint8_t> buffer) {
     bool property_locked = false;
     bool property_created = false;
 
+    auto* property = new PropertyParser();
     std::string str(buffer.begin(), buffer.end());
     for (uint8_t byte : buffer) {
         bool is_passive = is_passive_byte(byte);
@@ -45,9 +49,16 @@ PropertyParser* propertyParser(std::vector<uint8_t> buffer) {
         if (!is_passive) {
             if (!is_active) {//Если байт не является активным и пассивным = неизвестный байт
                 if (property_locked && !property_created) {
-                    throw ConfigurateException("Fail parse config: "+ str);
+                    throw ConfigurateException("Fail property format: "+ str);
                 } else if (property_locked && property_created) {
-                    return new PropertyParser{property_name, PROPERTY_VALUE_STRING_TYPE};
+                    if (byte == STRING_END) {
+                        property->propertyName = property_name;
+                        property->propertyValueType = PROPERTY_VALUE_STRING_TYPE;
+                        return property;
+                    } else {
+                        property->propertyValue += byte;
+                        continue;
+                    }
                 }
                 property_name += byte;
             } else if (byte == CREATE_PROPERTY) {
@@ -62,11 +73,15 @@ PropertyParser* propertyParser(std::vector<uint8_t> buffer) {
                         return new PropertyParser{property_name, PROPERTY_VALUE_OBJECT_TYPE};
                     case ARRAY_START:
                         return new PropertyParser{property_name, PROPERTY_VALUE_ARRAY_TYPE};
+                    case STRING_END:
+                        property->propertyName = property_name;
+                        property->propertyValueType = PROPERTY_VALUE_STRING_TYPE;
+                        return property;
                     default:
-                        throw ConfigurateException("Fail parse config: "+ str);
+                        throw ConfigurateException("Undefined property type: "+ str);
                 }
             } else if (!property_name.empty()) {
-                throw ConfigurateException("Fail parse config: "+ str);
+                throw ConfigurateException("Fail parse property name: "+ str);
             }
         }
 

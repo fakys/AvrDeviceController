@@ -10,14 +10,17 @@
 
 
 class Configurate : public ObjectConfigFieldType {
-private:
+public:
+    Configurate() = default;
     std::string getConfigName() override {
         return "configurate";
-    };
-    bool requiredField() {
+    }
+
+    bool requiredField() override {
         return true;
-    };
-    virtual bool handelField(uint8_t byte) = 0;
+    }
+
+    bool handelRow(std::vector<uint8_t> row) override;
 };
 
 #endif //AVRDEVICECONTROLLER_CONFIGURATE_H

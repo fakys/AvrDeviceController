@@ -15,7 +15,7 @@
 #define ARRAY_END ']'
 #define STRING_END ';'
 #define CREATE_PROPERTY '='
-#define PASSIVE_BYTES {' ', '\n'}
+#define PASSIVE_BYTES {' ', '\n', '\t'}
 #define ACTIVE_BYTES {OBJECT_START, OBJECT_END, ARRAY_START, ARRAY_END, STRING_END, CREATE_PROPERTY}
 
 #define PROPERTY_VALUE_OBJECT_TYPE "object"
@@ -26,8 +26,13 @@ struct PropertyParser {
     public:
         std::string propertyName;
         std::string propertyValueType;
+        std::string propertyValue; // Работает только есть переменная string!!!
 };
 
 PropertyParser* propertyParser(std::vector<uint8_t> buffer);
+
+bool is_passive_byte(uint8_t byte);
+
+bool is_active_byte(uint8_t byte);
 
 #endif //AVRDEVICECONTROLLER_CONFIG_PARSER_H

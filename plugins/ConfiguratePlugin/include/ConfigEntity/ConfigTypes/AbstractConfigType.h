@@ -6,6 +6,7 @@
 #define AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H
 #include <string>
 #include <cstdint>
+#include <vector>
 
 class AbstractConfigType {
     private:
@@ -13,7 +14,7 @@ class AbstractConfigType {
     public:
     virtual std::string getConfigName()=0;
     virtual bool requiredField() = 0;
-    virtual bool handelField(uint8_t byte) = 0;
+    virtual bool handelRow(std::vector<uint8_t> row) = 0;
 
     bool isCompleted() {
         return fieldCompleted;
