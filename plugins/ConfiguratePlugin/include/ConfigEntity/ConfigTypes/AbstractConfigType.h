@@ -5,24 +5,19 @@
 #ifndef AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H
 #define AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H
 #include <string>
+#include <cstdint>
 
-class AbstractConfigEntity {
+class AbstractConfigType {
     private:
-    std::string value;
+        bool fieldCompleted = false;
     public:
     virtual std::string getConfigName()=0;
-    void setValue(std::string v) {
-        this->value = v;
-    }
-
-    std::string getValue() {
-        return value;
-    }
-
     virtual bool requiredField() = 0;
-    virtual bool isGroup() = 0;
+    virtual bool handelField(uint8_t byte) = 0;
 
-    virtual ~AbstractConfigEntity()=default;
+    bool isCompleted() {
+        return fieldCompleted;
+    }
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H

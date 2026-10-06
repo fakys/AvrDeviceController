@@ -1,0 +1,13 @@
+//
+// Created by fakys on 06.10.2026.
+//
+
+#ifndef AVRDEVICECONTROLLER_ABSTRACTSTRINGCONFIGFIELDTYPE_H
+#define AVRDEVICECONTROLLER_ABSTRACTSTRINGCONFIGFIELDTYPE_H
+#include "AbstractConfigType.h"
+
+class StringConfigFieldType : public AbstractConfigType {
+
+};
+
+#endif //AVRDEVICECONTROLLER_ABSTRACTSTRINGCONFIGFIELDTYPE_H

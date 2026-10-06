@@ -1,11 +1,13 @@
 add_library(
         ConfiguratePlugin
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ConfigurateLoader.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/config_parser_helper.cpp
 )
 
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity)
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/Exceptions)
+target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity/ConfigTypes)
 
 
 target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include)

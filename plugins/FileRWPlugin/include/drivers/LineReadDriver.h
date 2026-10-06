@@ -9,7 +9,7 @@ class LineReadDriver: public AbstractReadDriver {
         std::vector<uint8_t> separators;
         int currentLine = 0;
     public:
-        LineReadDriver(std::vector<uint8_t>&& separators) : separators(std::move(separators)), AbstractReadDriver() {
+        LineReadDriver(std::vector<uint8_t> separators) : separators(std::move(separators)), AbstractReadDriver() {
         }
 
         bool readFile(std::vector<uint8_t>* buffer) override {

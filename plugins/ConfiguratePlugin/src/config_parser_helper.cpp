@@ -1,0 +1,77 @@
+//
+// Created by fakys on 06.10.2026.
+//
+#include "config_parser_helper.h"
+
+#include "ConfigurateException.h"
+
+
+bool is_passive_byte(uint8_t byte) {
+    std::vector<uint8_t> bytes = PASSIVE_BYTES;
+    for (uint8_t passive_byte : bytes) {
+        if (passive_byte == byte) return true;
+    }
+
+    return false;
+}
+
+bool is_active_byte(uint8_t byte) {
+    std::vector<uint8_t> bytes = ACTIVE_BYTES;
+    for (uint8_t passive_byte : bytes) {
+        if (passive_byte == byte) return true;
+    }
+
+    return false;
+}
+
+PropertyParser* propertyParser(std::vector<uint8_t> buffer) {
+    std::string property_name = "";
+    uint8_t prev_byte = 0;
+    bool property_locked = false;
+    bool property_created = false;
+
+    std::string str(buffer.begin(), buffer.end());
+    for (uint8_t byte : buffer) {
+        bool is_passive = is_passive_byte(byte);
+        bool is_active = is_active_byte(byte);
+        if (is_passive || is_active) {
+            if (!property_name.empty() && prev_byte == property_name[property_name.length() - 1]) {
+                //Если предыдущий байт ушел в переменную а этот нет, закрываем переменную для пополнения
+                property_locked = true;
+            }
+        }
+
+
+        if (!is_passive) {
+            if (!is_active) {//Если байт не является активным и пассивным = неизвестный байт
+                if (property_locked && !property_created) {
+                    throw ConfigurateException("Fail parse config: "+ str);
+                } else if (property_locked && property_created) {
+                    return new PropertyParser{property_name, PROPERTY_VALUE_STRING_TYPE};
+                }
+                property_name += byte;
+            } else if (byte == CREATE_PROPERTY) {
+                if (property_locked) {
+                    property_created = true;
+                } else {
+                    throw ConfigurateException("Fail parse config: "+ str);
+                }
+            } else if (property_created) {
+                switch (byte) {
+                    case OBJECT_START:
+                        return new PropertyParser{property_name, PROPERTY_VALUE_OBJECT_TYPE};
+                    case ARRAY_START:
+                        return new PropertyParser{property_name, PROPERTY_VALUE_ARRAY_TYPE};
+                    default:
+                        throw ConfigurateException("Fail parse config: "+ str);
+                }
+            } else if (!property_name.empty()) {
+                throw ConfigurateException("Fail parse config: "+ str);
+            }
+        }
+
+
+        prev_byte = byte;
+    }
+    return nullptr;
+}
