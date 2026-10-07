@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <algorithm>
 
+#include "config_parser_helper.h"
+
 class LineReadDriver: public AbstractReadDriver {
     private:
         std::vector<uint8_t> separators;
@@ -17,21 +19,14 @@ class LineReadDriver: public AbstractReadDriver {
 
             uint8_t byte;
             ssize_t bytes_read;
-            //Линия на которой мы находимся, 0 = наша актуальная
-            int line = currentLine;
 
             while ((bytes_read = read(this->fileIndex, &byte, 1)) > 0) {
-                if (line == 0) {
-                    buffer->push_back(byte);
-
-                    auto it = std::find(separators.begin(), separators.end(), byte);
-                    if (it != separators.end())
-                    {
-                        currentLine++;
-                        break;
-                    }
-                } else {
-                    line--;
+                buffer->push_back(byte);
+                auto it = std::find(separators.begin(), separators.end(), byte);
+                if (it != separators.end())
+                {
+                    currentLine++;
+                    break;
                 }
             }
 

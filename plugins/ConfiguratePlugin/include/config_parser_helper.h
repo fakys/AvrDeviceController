@@ -35,4 +35,6 @@ bool is_passive_byte(uint8_t byte);
 
 bool is_active_byte(uint8_t byte);
 
+bool objectInArray(std::vector<uint8_t> buffer);
+
 #endif //AVRDEVICECONTROLLER_CONFIG_PARSER_H

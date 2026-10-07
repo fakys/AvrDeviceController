@@ -27,6 +27,20 @@ bool is_active_byte(uint8_t byte) {
     return false;
 }
 
+bool objectInArray(std::vector<uint8_t> buffer) {
+    bool is_object = false;
+    for (uint8_t byte : buffer) {
+        if (is_active_byte(byte)) {
+            if (byte == OBJECT_START) {
+                is_object = true;
+            }
+        }
+    }
+    return is_object;
+}
+
+//Функция парсит переменную в строке конфига
+//todo оставить подробные комментарии как все работает
 PropertyParser* propertyParser(std::vector<uint8_t> buffer) {
     std::string property_name = "";
     uint8_t prev_byte = 0;

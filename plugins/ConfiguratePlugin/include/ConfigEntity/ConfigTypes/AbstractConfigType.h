@@ -9,8 +9,9 @@
 #include <vector>
 
 class AbstractConfigType {
-    private:
+    protected:
         bool fieldCompleted = false;
+        AbstractConfigType* lastHandelObject = nullptr;
     public:
     virtual std::string getConfigName()=0;
     virtual bool requiredField() = 0;

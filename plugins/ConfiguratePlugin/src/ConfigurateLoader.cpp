@@ -27,7 +27,7 @@ bool ConfigurateLoader::checkConfig() {
 
 Configurate* ConfigurateLoader::loadConfig() {
     FileRWPlugin* plugin = (FileRWPlugin*)Kernel::getObject()->getPluginLoader()->getPluginByName(FileRWP);
-    std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END, '\n'};
+    std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END};
 
     FileEntity* file = plugin->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
     if (!file) {
@@ -58,5 +58,10 @@ Configurate* ConfigurateLoader::loadConfig() {
             }
         }
     }
+
+    if (!config && !config->isCompleted()) {
+        throw ConfigurateException("Config file is empty");
+    }
+
     return config;
 }
