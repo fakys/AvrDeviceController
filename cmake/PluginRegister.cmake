@@ -7,6 +7,8 @@ if (NOT PLUGINS)
     set(PLUGINS "FileRWPlugin" "ConfiguratePlugin")
 endif ()
 
+message(STATUS "aaa = ${PLUGINS}")
+
 function(PluginRegister)
     string(APPEND ALL_PLUGIN_OBJET "(AbstractPlugin*) new ${ARGN},")
     string(APPEND PLUGIN_INCLUDES "#include \"${ARGN}.h\"\n")
