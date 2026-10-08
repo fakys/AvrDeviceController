@@ -20,3 +20,5 @@ CPMAddPackage(
 )
 
 target_link_libraries(AvrDeviceController PUBLIC Crow)
+IncludeCore(AvrDeviceController)
+
