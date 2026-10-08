@@ -2,6 +2,7 @@
 #define AVR_PROTO_LINUX_FILERWPLUGIN_H
 
 #include "FileEntity.h"
+#include "AbstractPlugin.h"
 #include "AbstractReadDriver.h"
 #include <fcntl.h>
 #include "AbstractWriteDriver.h"

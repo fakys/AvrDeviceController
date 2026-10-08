@@ -25,25 +25,19 @@ bool ConfigDevice::handelRow(std::vector<uint8_t> row) {
         } else {
             throw ConfigurateException("Unsupported property type in "+this->getConfigName());
         }
+        delete property;
     } else {
-        std::string str(row.begin(), row.end());
-        for (uint8_t byte : row) {
-            if (byte == OBJECT_END) {
-                if (!this->deviceName || this->deviceName->getValue().empty()) {
-                    throw ConfigurateException("Undefined required field in devices: name");
-                } else if (!this->deviceType || this->deviceType->getValue().empty()) {
-                    throw ConfigurateException("Undefined required field in devices: type");
-                } else if (!this->devicePath || this->devicePath->getValue().empty()) { //todo пофакту это только для uart
-                    throw ConfigurateException("Undefined required field in devices: path");
-                }
+        if (this->checkCloseObject(row)) {
+            if (!this->deviceName || this->deviceName->getValue().empty()) {
+                throw ConfigurateException("Undefined required field in devices: name");
+            } else if (!this->deviceType || this->deviceType->getValue().empty()) {
+                throw ConfigurateException("Undefined required field in devices: type");
+            } else if (!this->devicePath || this->devicePath->getValue().empty()) { //todo пофакту это только для uart
+                throw ConfigurateException("Undefined required field in devices: path");
+            }
 
-                if (this->deviceType->getValue() != UART_TYPE) {
-                    throw ConfigurateException("Unsupported device type: "+this->getConfigName());
-                }
-
-                fieldCompleted = true;
-            }else if (!is_passive_byte(byte)) {
-                throw ConfigurateException("Fail parse config: "+ str);
+            if (this->deviceType->getValue() != UART_TYPE) {
+                throw ConfigurateException("Unsupported device type: "+this->getConfigName());
             }
         }
     }

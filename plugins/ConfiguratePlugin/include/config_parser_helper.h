@@ -15,7 +15,7 @@
 #define ARRAY_END ']'
 #define STRING_END ';'
 #define CREATE_PROPERTY '='
-#define PASSIVE_BYTES {' ', '\n', '\t'}
+#define PASSIVE_BYTES {' ', '\n', '\t', '\v', '\f', '\r'}
 #define ACTIVE_BYTES {OBJECT_START, OBJECT_END, ARRAY_START, ARRAY_END, STRING_END, CREATE_PROPERTY}
 
 #define PROPERTY_VALUE_OBJECT_TYPE "object"
@@ -28,6 +28,8 @@ struct PropertyParser {
         std::string propertyValueType;
         std::string propertyValue; // Работает только есть переменная string!!!
 };
+
+std::vector<uint8_t> cut_out_passive_bytes(std::vector<uint8_t> buffer);
 
 PropertyParser* propertyParser(std::vector<uint8_t> buffer);
 

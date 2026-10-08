@@ -4,8 +4,18 @@ add_library(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/drivers/AllFileReadDriver.cpp
 )
 
-target_include_directories(FileRWPlugin PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(FileRWPlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/drivers/abstracts)
-target_include_directories(FileRWPlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/drivers)
-target_include_directories(FileRWPlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/exceptions)
-target_include_directories(FileRWPlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(FileRWPlugin PUBLIC
+        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/include/Exceptions
+        ${CMAKE_SOURCE_DIR}/include/ProcessManager
+        ${CMAKE_SOURCE_DIR}/include/Patterns
+        ${CMAKE_SOURCE_DIR}/include/Arguments
+        ${CMAKE_SOURCE_DIR}/include/Communication
+        ${CMAKE_SOURCE_DIR}/include/Communication/drivers
+
+
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/drivers/abstracts
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/drivers
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/exceptions
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)

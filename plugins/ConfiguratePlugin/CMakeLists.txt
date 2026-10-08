@@ -7,19 +7,21 @@ add_library(
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ConfigEntity/ConfigDevice.cpp
 )
 
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/Exceptions)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity/ConfigTypes)
+target_include_directories(ConfiguratePlugin PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/Exceptions
+        ${CMAKE_CURRENT_SOURCE_DIR}/include/ConfigEntity/ConfigTypes
 
+        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/include/Exceptions
+        ${CMAKE_SOURCE_DIR}/include/ProcessManager
+        ${CMAKE_SOURCE_DIR}/include/Patterns
+        ${CMAKE_SOURCE_DIR}/include/Arguments
+        ${CMAKE_SOURCE_DIR}/include/Communication
+        ${CMAKE_SOURCE_DIR}/include/Communication/drivers
+)
 
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Exceptions)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/ProcessManager)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Patterns)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Arguments)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Communication)
-target_include_directories(ConfiguratePlugin PUBLIC ${CMAKE_SOURCE_DIR}/include/Communication/drivers)
 
 
 target_link_libraries(ConfiguratePlugin PUBLIC FileRWPlugin)

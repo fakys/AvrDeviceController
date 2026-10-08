@@ -42,18 +42,13 @@ bool Configurate::handelRow(std::vector<uint8_t> row) {
         } else {
             throw ConfigurateException("Unsupported property type in "+this->getConfigName());
         }
+        delete property;
     } else {
-        std::string str(row.begin(), row.end());
-        for (uint8_t byte : row) {
-            if (byte == OBJECT_END) {
-                if (!this->acceptLogPath) {
-                    throw ConfigurateException("Undefined required field: accept_log_path");
-                } else if (!this->errorLogPath) {
-                    throw ConfigurateException("Undefined required field: error_log_path");
-                }
-                fieldCompleted = true;
-            }else if (!is_passive_byte(byte)) {
-                throw ConfigurateException("Fail parse config: "+ str);
+        if (this->checkCloseObject(row)) {
+            if (!this->acceptLogPath) {
+                throw ConfigurateException("Undefined required field: accept_log_path");
+            } else if (!this->errorLogPath) {
+                throw ConfigurateException("Undefined required field: error_log_path");
             }
         }
     }

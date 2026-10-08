@@ -24,14 +24,7 @@ bool ConfigAllDevices::handelRow(std::vector<uint8_t> row) {
         this->devices.push_back((ConfigDevice*)this->lastHandelObject);
 
     } else {
-        std::string str(row.begin(), row.end());
-        for (uint8_t byte : row) {
-            if (byte == ARRAY_END) {
-                fieldCompleted = true;
-            }else if (!is_passive_byte(byte)) {
-                throw ConfigurateException("Fail parse config: "+ str);
-            }
-        }
+        this->checkCloseArray(row);
     }
     return true;
 }

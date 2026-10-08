@@ -38,6 +38,7 @@ Configurate* ConfigurateLoader::loadConfig() {
     std::vector<uint8_t> buffer;
     Configurate* config = nullptr;
     while (file->getReadDriver()->readFile(&buffer)) {
+        buffer = cut_out_passive_bytes(buffer);
         if (!config) {
             PropertyParser* property = propertyParser(buffer);
             if (property) {
@@ -59,9 +60,10 @@ Configurate* ConfigurateLoader::loadConfig() {
         }
     }
 
-    if (!config && !config->isCompleted()) {
+    if (!config || !config->isCompleted()) {
         throw ConfigurateException("Config file is empty");
     }
 
+    delete file;
     return config;
 }
