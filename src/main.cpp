@@ -3,7 +3,7 @@
 
 #include "Kernel.h"
 #include "PluginLoader.h"
-#include <pthread.h>
+#include <MainException.h>
 #include <unistd.h>
 
 void initKernel(int argc, char* argv[]) {
