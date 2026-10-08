@@ -10,7 +10,8 @@
 #include "UndefinedFileException.h"
 
 
-class FileRWPlugin: public AbstractPlugin {
+//todo Сделать Контроллер процессов которые будет понимать какой процесс каким файлом пользуется
+class FileController {
     private:
         //Вектор с открытыми файлами
         std::vector<FileEntity*> files;
@@ -49,20 +50,6 @@ class FileRWPlugin: public AbstractPlugin {
             }
         }
     }
-
-    std::string getPluginName() override {
-        return "FileRWPlugin";
-    };
-
-    int pluginLoad() override {
-        return 0;
-    }
-
-    std::vector<std::string>* getDependPlugins() override {
-        return nullptr;
-    }
 };
-
-#define FileRWP "FileRWPlugin"
 
 #endif

@@ -3,7 +3,7 @@
 
 ## Компиляция
 ```shell
-cmake -DPLUGINS="FileRWPlugin;ConfiguratePlugin;HttpClientPlugin" -S ./ -B ./build/
+cmake -DPLUGINS="HttpClientPlugin" -S ./ -B ./build/
 ```
 
 ## Конфигурация

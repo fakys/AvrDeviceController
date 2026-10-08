@@ -2,13 +2,6 @@ set(PLUGINS "" CACHE STRING "List of items")
 set(ALL_PLUGIN_OBJET "")
 set(PLUGIN_INCLUDES "")
 
-
-if (NOT PLUGINS)
-    set(PLUGINS "FileRWPlugin" "ConfiguratePlugin")
-endif ()
-
-message(STATUS "aaa = ${PLUGINS}")
-
 function(PluginRegister)
     string(APPEND ALL_PLUGIN_OBJET "(AbstractPlugin*) new ${ARGN},")
     string(APPEND PLUGIN_INCLUDES "#include \"${ARGN}.h\"\n")

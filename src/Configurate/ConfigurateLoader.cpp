@@ -4,7 +4,6 @@
 #include "ConfigurateLoader.h"
 #include "main.h"
 #include "Kernel.h"
-#include "FileRWPlugin.h"
 #include "LineReadDriver.h"
 #include "ConfigurateException.h"
 #include "config_parser_helper.h"
@@ -20,16 +19,14 @@ bool ConfigurateLoader::checkConfig() {
         this->configPath = Kernel::getObject()->getProcessArgument()->getConfigPathArg()->getValue();
     }
 
-    FileRWPlugin* plugin = (FileRWPlugin*)Kernel::getObject()->getPluginLoader()->getPluginByName(FileRWP);
-    return plugin->checkAccessFile(this->configPath);
+    return Kernel::getObject()->getFileController()->checkAccessFile(this->configPath);
 }
 
 
 Configurate* ConfigurateLoader::loadConfig() {
-    FileRWPlugin* plugin = (FileRWPlugin*)Kernel::getObject()->getPluginLoader()->getPluginByName(FileRWP);
     std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END};
 
-    FileEntity* file = plugin->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
+    FileEntity* file = Kernel::getObject()->getFileController()->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
     if (!file) {
         throw ConfigurateException("Fail open config file");
     }

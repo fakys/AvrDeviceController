@@ -10,7 +10,13 @@ void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
     Kernel::getObject();
     Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Start init Kernel");
+
+    //Загрузка и парсинг аргументов
     Kernel::getObject()->handleArguments(argc, argv);
+
+    //Загрузка конфига
+    Kernel::getObject()->initConfig();
+
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();
     Kernel::getObject()->getCommunication()->sendOutputInfoMessage("End init Kernel");
@@ -44,6 +50,7 @@ int startService() {
 int main(int argc, char* argv[]) {
     try {
         initKernel(argc, argv);
+
         return startService();
     } catch (MainException &e) {
         Kernel::getObject()->getCommunication()->sendOutputErrorMessage(e.getMessage());

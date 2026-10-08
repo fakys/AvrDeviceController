@@ -7,6 +7,7 @@
 Kernel::Kernel() {
     this->pluginLoader = new PluginLoader();
     this->communication = new Communication();
+    this->fileController = new FileController();
 }
 
 PluginLoader *Kernel::getPluginLoader() {
@@ -23,4 +24,17 @@ ProcessArgument *Kernel::getProcessArgument() {
 
 Communication *Kernel::getCommunication() {
     return this->communication;
+}
+
+void Kernel::initConfig() {
+    auto* configLoader = new ConfigurateLoader();
+    configLoader->checkConfig();
+    this->configurate = configLoader->loadConfig();
+}
+
+FileController *Kernel::getFileController() {
+    return this->fileController;
+}
+Configurate* Kernel::getConfigurate() {
+    return this->configurate;
 }

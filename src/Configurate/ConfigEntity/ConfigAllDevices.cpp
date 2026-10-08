@@ -3,7 +3,7 @@
 //
 
 #include "ConfigurateException.h"
-#include "config_parser_helper.h"
+#include "../../../../include/Configurate/config_parser_helper.h"
 #include "ConfigAllDevices.h"
 
 #include <iostream>

@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-#include "config_parser_helper.h"
+#include "../../../../include/Configurate/config_parser_helper.h"
 #include "ConfigurateException.h"
 
 bool ConfigDevice::handelRow(std::vector<uint8_t> row) {

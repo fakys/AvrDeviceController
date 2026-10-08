@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <algorithm>
 
-#include "config_parser_helper.h"
+#include "../../../../include/Configurate/config_parser_helper.h"
 
 class LineReadDriver: public AbstractReadDriver {
     private:
