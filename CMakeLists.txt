@@ -10,7 +10,9 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 add_executable(AvrDeviceController ${SOURCES})
 
 #todo Этот хардкод убрать!
-add_definitions(-D_PROJECT_NAME_="AvrDeviceController")
+target_compile_definitions(AvrDeviceController PUBLIC
+        "PROJECT_NAME=\"ALL_PLUGIN_OBJET\""
+)
 add_definitions(-D_PROJECT_CONFIG_PATH_="/etc/avr_device_controller/main.conf")
 
 #Регистрируем до библиотеки

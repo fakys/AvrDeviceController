@@ -1,7 +1,7 @@
 //
 // Created by fakys on 06.10.2026.
 //
-#include "../../include/Configurate/config_parser_helper.h"
+#include "config_parser_helper.h"
 
 #include <iostream>
 #include <ostream>

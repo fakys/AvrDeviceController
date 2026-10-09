@@ -1,12 +1,13 @@
 #ifndef AVR_PROTO_LINUX_ABSTRACTWRITE_H
 #define AVR_PROTO_LINUX_ABSTRACTWRITE_H
 
+#include <string>
+
 class AbstractWriteDriver {
 protected:
     int fileIndex = 0;
 public:
-    AbstractWriteDriver() = default;
-    virtual ~AbstractWriteDriver() = default;
+    virtual bool writeFile(std::vector<uint8_t>* buffer) = 0;
     void setFileIndex(int fileIndex) {
         this->fileIndex = fileIndex;
     }

@@ -13,6 +13,7 @@
 #include "PluginLoader.h"
 #include "Singleton.h"
 #include "ProcessArgument.h"
+#include "LogerService.h"
 
 class Kernel : public Singleton<Kernel> {
     private:
@@ -22,6 +23,7 @@ class Kernel : public Singleton<Kernel> {
         FileController* fileController;
         Configurate* configurate;
         ConfigurateLoader* configLoader;
+        LogerService* logger;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
@@ -33,6 +35,7 @@ class Kernel : public Singleton<Kernel> {
     ConfigurateLoader* getConfigLoader();
     void loadConfig();
     Configurate* getConfigurate();
+    LogerService* getLogerService();
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

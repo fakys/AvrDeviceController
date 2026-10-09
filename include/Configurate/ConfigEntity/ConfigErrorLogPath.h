@@ -6,6 +6,7 @@
 #define AVRDEVICECONTROLLER_CONFIGERRORLOGPATH_H
 #include "StringConfigFieldType.h"
 
+#define ERROR_LOG_PATH "error_log_path"
 
 class ConfigErrorLogPath : public StringConfigFieldType {
     public:

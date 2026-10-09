@@ -4,14 +4,13 @@
 #include <unistd.h>
 #include <algorithm>
 
-#include "../../../../include/Configurate/config_parser_helper.h"
 
-class LineReadDriver: public AbstractReadDriver {
+class LineWriteDriver: public AbstractReadDriver {
     private:
         std::vector<uint8_t> separators;
         int currentLine = 0;
     public:
-        LineReadDriver(std::vector<uint8_t> separators) : separators(std::move(separators)), AbstractReadDriver() {
+        LineWriteDriver(std::vector<uint8_t> separators) : separators(std::move(separators)), AbstractReadDriver() {
         }
 
         bool readFile(std::vector<uint8_t>* buffer) override {

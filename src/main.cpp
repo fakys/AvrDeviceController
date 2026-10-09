@@ -10,7 +10,6 @@
 void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
     Kernel::getObject();
-    Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Start init Kernel");
 
     //Загрузка и парсинг аргументов
     Kernel::getObject()->handleArguments(argc, argv);
@@ -23,10 +22,11 @@ void initKernel(int argc, char* argv[]) {
 
     //Загрузка конфига
     Kernel::getObject()->loadConfig();
+    //Инит логирования
+    Kernel::getObject()->getLogerService()->initLoger();
 
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();
-    Kernel::getObject()->getCommunication()->sendOutputInfoMessage("End init Kernel");
 }
 
 int startService() {
@@ -39,14 +39,14 @@ int startService() {
                 Kernel::getObject()->getCommunication()->sendOutputErrorMessage("Error create fork process");
                 return -1;
             case 0 :
-                Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Success create fork process pid="+std::to_string(getpid()));
+                Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Success create fork process");
                 break;
             default :
                 return  0;
                 break;
           }
     }
-
+    Kernel::getObject()->getCommunication()->sendOutputInfoMessage(PROJECT_NAME" started pid = "+std::to_string(getpid()));
     while (true) {
         //todo выполнять различные проверки
     }

@@ -15,5 +15,6 @@ function(IncludeCore)
             ${CMAKE_SOURCE_DIR}/include/Configurate/Exceptions
             ${CMAKE_SOURCE_DIR}/include/Configurate/ConfigEntity
             ${CMAKE_SOURCE_DIR}/include/Configurate/ConfigEntity/ConfigTypes
+            ${CMAKE_SOURCE_DIR}/include/Loger
     )
 endfunction()

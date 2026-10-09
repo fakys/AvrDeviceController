@@ -35,7 +35,7 @@ Configurate* ConfigurateLoader::loadConfig() {
     this->registerBaseConfigs();
     std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END};
 
-    FileEntity* file = Kernel::getObject()->getFileController()->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
+    FileEntity* file = Kernel::getObject()->getFileController()->openFile(this->configPath, new LineWriteDriver(vectorStrEnd));
     if (!file) {
         throw ConfigurateException("Fail open config file");
     }
