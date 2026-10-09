@@ -18,6 +18,10 @@ public:
     std::string getValue() {
         return value;
     }
+
+    std::string getType() override {
+        return PROPERTY_VALUE_STRING_TYPE;
+    };
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTSTRINGCONFIGFIELDTYPE_H

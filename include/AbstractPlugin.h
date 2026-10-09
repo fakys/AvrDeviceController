@@ -5,6 +5,7 @@
 #ifndef AVR_PROTO_LINUX_ABSTRACTPLUGIN_H
 #define AVR_PROTO_LINUX_ABSTRACTPLUGIN_H
 #include "main.h"
+#include "AbstractConfigType.h"
 
 class AbstractPlugin {
 private:
@@ -13,7 +14,7 @@ public:
     virtual std::string getPluginName() = 0;
     virtual std::vector<std::string>* getDependPlugins()=0;
     virtual int pluginLoad() = 0;
-    // virtual std::vector<AbstractConfigType*> getConfigs() = 0;
+    virtual std::vector<AbstractConfigType*> getConfigs() = 0;
 
     void pluginIsLoaded() {
         pluginLoaded = true;

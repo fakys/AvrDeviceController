@@ -16,7 +16,7 @@ void PluginLoader::loadPlugins() {
 //Загружаем файлы конфига
 void PluginLoader::loadConfigPlugin() {
     for (AbstractPlugin* plugin : *this->plugins) {
-        //Kernel::getObject()->getConfigLoader()->appendConfigFields(plugin->getConfigs());
+        Kernel::getObject()->getConfigLoader()->appendConfigFields(plugin->getConfigs());
     }
 }
 

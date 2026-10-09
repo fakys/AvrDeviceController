@@ -6,10 +6,13 @@
 
 #include <iostream>
 
+#include "ArrayConfigFieldType.h"
+#include "ArgTypes/AbstractArgType.h"
+
 bool AbstractParentConfigField::checkCloseParent(std::vector<uint8_t> row) {
     std::string str(row.begin(), row.end());
     for (uint8_t byte : row) {
-        if (byte == ARRAY_END) {
+        if (this->getType() == PROPERTY_VALUE_ARRAY_TYPE && byte == ARRAY_END || this->getType() == PROPERTY_VALUE_OBJECT_TYPE && byte == OBJECT_END) {
             fieldCompleted = true;
         }else {
             throw ConfigurateException("Fail parse config: "+ str);
@@ -25,6 +28,12 @@ bool AbstractParentConfigField::handelRow(std::vector<uint8_t> row) {
 
     //Если есть не законченный объект, то продолжаем его постройку
     if (this->lastHandelObject && !this->lastHandelObject->isCompleted()) {
+        if (this->lastHandelObject->getType() == PROPERTY_VALUE_ARRAY_TYPE) {
+            auto* lastHand = (ArrayConfigFieldType*)this->lastHandelObject;
+            lastHand->handelRow(row);
+            return true;
+
+        }
         this->lastHandelObject->handelRow(row);
         return true;
     }
@@ -37,7 +46,7 @@ bool AbstractParentConfigField::handelRow(std::vector<uint8_t> row) {
         if (property->propertyValueType == PROPERTY_VALUE_STRING_TYPE) {
             StringConfigFieldType* stringField = (StringConfigFieldType*)this->getFieldByName(property->propertyName);
             stringField->setValue(property->propertyValue);
-        } else if (property->propertyValueType == PROPERTY_VALUE_OBJECT_TYPE) {
+        } else if (property->propertyValueType == PROPERTY_VALUE_OBJECT_TYPE || property->propertyValueType == PROPERTY_VALUE_ARRAY_TYPE) {
             AbstractConfigType* field = this->getFieldByName(property->propertyName);
             if (field->getType() == PROPERTY_VALUE_ARRAY_TYPE || field->getType() == PROPERTY_VALUE_OBJECT_TYPE) {
                 this->lastHandelObject = (AbstractParentConfigField*)this->getFieldByName(property->propertyName);

@@ -10,12 +10,14 @@
 #include "ObjectConfigFieldType.h"
 
 class ConfigDevice : public ObjectConfigFieldType {
-private:
-    DeviceName *deviceName = nullptr;
-    DeviceType *deviceType = nullptr;
-    DevicePath *devicePath = nullptr;
-
 public:
+    ConfigDevice() {
+        this->childs = std::vector<AbstractConfigType*> {
+            new DeviceName(),
+            new DevicePath(),
+            new DeviceType(),
+        };
+    }
     std::string getConfigName() override {
         return "device";
     };
@@ -23,20 +25,6 @@ public:
     bool requiredField() override {
         return false;
     };
-
-    bool handelRow(std::vector<uint8_t> row) override;
-
-    std::string getName() {
-        return this->deviceName->getValue();
-    }
-
-    std::string getType() {
-        return this->deviceType->getValue();
-    }
-
-    std::string getDevicePath() {
-        return this->devicePath->getValue();
-    }
 };
 
 #endif //AVRDEVICECONTROLLER_CONFIGDEVICE_H

@@ -6,10 +6,12 @@
 #define AVRDEVICECONTROLLER_CONFIGACCEPTLOGPATH_H
 #include "StringConfigFieldType.h"
 
+#define ACCEPT_LOG_PATH "accept_log_path"
+
 class ConfigAcceptLogPath : public StringConfigFieldType {
 public:
     std::string getConfigName() override {
-        return "accept_log_path";
+        return ACCEPT_LOG_PATH;
     }
 
     bool requiredField() override {

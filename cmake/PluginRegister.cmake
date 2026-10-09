@@ -2,16 +2,11 @@ set(PLUGINS "" CACHE STRING "List of items")
 set(ALL_PLUGIN_OBJET "")
 set(PLUGIN_INCLUDES "")
 
-function(PluginRegister)
-    string(APPEND ALL_PLUGIN_OBJET "(AbstractPlugin*) new ${ARGN},")
-    string(APPEND PLUGIN_INCLUDES "#include \"${ARGN}.h\"\n")
-    add_subdirectory(${CMAKE_SOURCE_DIR}/plugins/${ARGN})
-    target_link_libraries(AvrDeviceController PUBLIC ${ARGN})
-endfunction()
-
-
 foreach(plugin ${PLUGINS})
-    PluginRegister(${plugin})
+    string(APPEND ALL_PLUGIN_OBJET "(AbstractPlugin*) new ${plugin},")
+    string(APPEND PLUGIN_INCLUDES "#include \"${plugin}.h\"\n")
+    add_subdirectory(${CMAKE_SOURCE_DIR}/plugins/${plugin})
+    target_link_libraries(AvrDeviceController PUBLIC ${plugin})
 endforeach()
 
 file(WRITE ${CMAKE_BINARY_DIR}/plugins.h "${PLUGIN_INCLUDES}")

@@ -6,24 +6,10 @@
 #define AVRDEVICECONTROLLER_OBJECTCONFIGFIELDTYPE_H
 #include "AbstractParentConfigField.h"
 #include "config_parser_helper.h"
-#include "ConfigurateException.h"
 
 #define OBJECT_TYPE "object"
 
 class ObjectConfigFieldType : public AbstractParentConfigField {
-protected:
-    bool checkCloseObject(std::vector<uint8_t> row) {
-        std::string str(row.begin(), row.end());
-        for (uint8_t byte : row) {
-            if (byte == OBJECT_END) {
-                fieldCompleted = true;
-            }else {
-                throw ConfigurateException("Fail parse config: "+ str);
-            }
-        }
-
-        return fieldCompleted;
-    }
 public:
     std::string getType() {
         return OBJECT_TYPE;

@@ -5,6 +5,7 @@
 
 #include "ArrayConfigFieldType.h"
 
+#include <iostream>
 
 
 bool ArrayConfigFieldType::handelRow(std::vector<uint8_t> row) {
@@ -14,6 +15,12 @@ bool ArrayConfigFieldType::handelRow(std::vector<uint8_t> row) {
 
     //Если есть не законченный объект, то продолжаем его постройку
     if (this->lastHandelObject && !this->lastHandelObject->isCompleted()) {
+        if (this->lastHandelObject->getType() == PROPERTY_VALUE_ARRAY_TYPE) {
+            auto* lastHand = (ArrayConfigFieldType*)this->lastHandelObject;
+            lastHand->handelRow(row);
+            return true;
+
+        }
         this->lastHandelObject->handelRow(row);
         return true;
     }
@@ -25,4 +32,5 @@ bool ArrayConfigFieldType::handelRow(std::vector<uint8_t> row) {
     } else {
         this->checkCloseParent(row);
     }
+    return true;
 }

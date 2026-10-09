@@ -5,6 +5,7 @@
 #include "PluginLoader.h"
 #include <MainException.h>
 #include <unistd.h>
+#include "ConfigAcceptLogPath.h"
 
 void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра

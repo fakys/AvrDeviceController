@@ -10,6 +10,9 @@
 
 class ConfigAllDevices : public ArrayConfigFieldType {
 public:
+     AbstractParentConfigField* createChildConf() override {
+        return new ConfigDevice();
+    }
     std::string getConfigName() override {
         return "devices";
     };

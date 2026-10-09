@@ -16,10 +16,13 @@ private:
     std::vector<AbstractParentConfigField*> array;
 public:
     virtual AbstractParentConfigField* createChildConf() = 0;
+
     void appendChild(AbstractParentConfigField* child) {
         array.push_back(child);
     }
+
     bool handelRow(std::vector<uint8_t> row);
+
     std::string getType() {
         return ARRAY_TYPE;
     };

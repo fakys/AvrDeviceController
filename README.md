@@ -3,7 +3,7 @@
 
 ## Компиляция
 ```shell
-cmake -DPLUGINS="HttpClientPlugin" -S ./ -B ./build/
+cmake -DPLUGINS="HttpClientPlugin;AvrDevicesPlugin" -S ./ -B ./build/
 ```
 
 ## Конфигурация

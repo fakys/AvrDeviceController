@@ -5,9 +5,9 @@
 #ifndef AVRDEVICECONTROLLER_AVRDEVICESPLUGIN_H
 #define AVRDEVICECONTROLLER_AVRDEVICESPLUGIN_H
 
-#include "AbstractConfigType.h"
 #include "AbstractPlugin.h"
 #include "ConfigAllDevices.h"
+
 
 class AvrDevicesPlugin :public AbstractPlugin {
 public:
@@ -16,7 +16,9 @@ public:
     }
 
     std::vector<AbstractConfigType*> getConfigs() override {
-        return std::vector<AbstractConfigType*>{};
+        return std::vector<AbstractConfigType*>{
+            (AbstractConfigType*) new ConfigAllDevices()
+        };
     }
 
     int pluginLoad() override {

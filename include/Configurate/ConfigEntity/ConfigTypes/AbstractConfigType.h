@@ -5,8 +5,6 @@
 #ifndef AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H
 #define AVRDEVICECONTROLLER_ABSTRACTCONFIGENTITY_H
 #include <string>
-#include <cstdint>
-#include <vector>
 
 class AbstractConfigType {
     protected:
