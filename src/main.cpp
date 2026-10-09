@@ -23,7 +23,7 @@ void initKernel(int argc, char* argv[]) {
     //Загрузка конфига
     Kernel::getObject()->loadConfig();
     //Инит логирования
-    Kernel::getObject()->getLogerService()->initLoger();
+    Kernel::getObject()->initLogerService();
 
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();

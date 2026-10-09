@@ -45,7 +45,9 @@ FileController *Kernel::getFileController() {
 Configurate* Kernel::getConfigurate() {
     return this->configurate;
 }
-
+void Kernel::initLogerService() {
+    this->logger = new LogerService();
+}
 LogerService* Kernel::getLogerService() {
     return this->logger;
 }

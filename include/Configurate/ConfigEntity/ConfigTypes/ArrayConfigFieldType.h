@@ -17,8 +17,12 @@ private:
 public:
     virtual AbstractParentConfigField* createChildConf() = 0;
 
-    void appendChild(AbstractParentConfigField* child) {
+    void appendElement(AbstractParentConfigField* child) {
         array.push_back(child);
+    }
+
+    std::vector<AbstractParentConfigField*> getElements() {
+        return array;
     }
 
     bool handelRow(std::vector<uint8_t> row);

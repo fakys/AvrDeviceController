@@ -9,6 +9,7 @@
 #include "Kernel.h"
 #include "LineReadDriver.h"
 #include "ConfigurateException.h"
+#include "ConfigLogLevel.h"
 #include "config_parser_helper.h"
 
 ConfigurateLoader::ConfigurateLoader() = default;
@@ -29,6 +30,7 @@ bool ConfigurateLoader::checkConfig() {
 void ConfigurateLoader::registerBaseConfigs() {
     this->fields.push_back(new ConfigAcceptLogPath());
     this->fields.push_back(new ConfigErrorLogPath());
+    this->fields.push_back(new ConfigLogLevel());
 }
 
 Configurate* ConfigurateLoader::loadConfig() {

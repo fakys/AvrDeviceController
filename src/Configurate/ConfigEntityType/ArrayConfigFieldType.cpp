@@ -27,7 +27,7 @@ bool ArrayConfigFieldType::handelRow(std::vector<uint8_t> row) {
 
     if (objectInArray(row)) {
         this->lastHandelObject = this->createChildConf();
-        this->appendChild(this->lastHandelObject);
+        this->appendElement(this->lastHandelObject);
 
     } else {
         this->checkCloseParent(row);

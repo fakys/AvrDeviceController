@@ -12,7 +12,7 @@ class LogerService {
         FileEntity* errorLogFile = nullptr;
         std::string logType;
     public:
-    void initLoger();
+        LogerService();
 };
 
 #endif //AVRDEVICECONTROLLER_LOGERSERVICE_H

@@ -34,6 +34,7 @@ class Kernel : public Singleton<Kernel> {
     void initConfig();
     ConfigurateLoader* getConfigLoader();
     void loadConfig();
+    void initLogerService();
     Configurate* getConfigurate();
     LogerService* getLogerService();
 };

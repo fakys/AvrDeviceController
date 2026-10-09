@@ -27,7 +27,7 @@ class AbstractParentConfigField :public AbstractConfigType {
     }
 
     bool handelRow(std::vector<uint8_t> row);
-
+    std::vector<AbstractConfigType*> getChilds() { return childs; }
     AbstractConfigType* getFieldByName(std::string name) {
         for (auto field : childs) {
             if (field->getConfigName() == name) {

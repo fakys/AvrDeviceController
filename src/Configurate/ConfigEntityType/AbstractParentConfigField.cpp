@@ -7,12 +7,33 @@
 #include <iostream>
 
 #include "ArrayConfigFieldType.h"
+#include "ObjectConfigFieldType.h"
 #include "ArgTypes/AbstractArgType.h"
 
 bool AbstractParentConfigField::checkCloseParent(std::vector<uint8_t> row) {
     std::string str(row.begin(), row.end());
     for (uint8_t byte : row) {
         if (this->getType() == PROPERTY_VALUE_ARRAY_TYPE && byte == ARRAY_END || this->getType() == PROPERTY_VALUE_OBJECT_TYPE && byte == OBJECT_END) {
+            for (AbstractConfigType* config : this->childs) {
+                if (config->requiredField()) {
+                    if (config->getType() == PROPERTY_VALUE_STRING_TYPE) {
+                        auto* field = (StringConfigFieldType*)config;
+                        if (field->getValue().empty()) {
+                            throw ConfigurateException("Required property "+config->getConfigName()+" is empty");
+                        }
+                    } else if (config->getType() == PROPERTY_VALUE_OBJECT_TYPE) {
+                        auto* field = (ObjectConfigFieldType*)config;
+                        if (field->getChilds().empty()) {
+                            throw ConfigurateException("Required property "+config->getConfigName()+" is empty");
+                        }
+                    } else if (config->getType() == PROPERTY_VALUE_ARRAY_TYPE) {
+                        auto* field = (ArrayConfigFieldType*)config;
+                        if (field->getElements().empty()) {
+                            throw ConfigurateException("Required property "+config->getConfigName()+" is empty");
+                        }
+                    }
+                }
+            }
             fieldCompleted = true;
         }else {
             throw ConfigurateException("Fail parse config: "+ str);
