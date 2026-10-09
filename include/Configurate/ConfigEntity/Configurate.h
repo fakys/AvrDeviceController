@@ -6,39 +6,21 @@
 #define AVRDEVICECONTROLLER_CONFIGURATE_H
 
 
-#include "ConfigAcceptLogPath.h"
-#include "ConfigAllDevices.h"
 #include "ObjectConfigFieldType.h"
-#include "ConfigErrorLogPath.h"
-
+#include <iostream>
 
 class Configurate : public ObjectConfigFieldType {
-private:
-    ConfigErrorLogPath* errorLogPath;
-    ConfigAcceptLogPath* acceptLogPath;
-    ConfigAllDevices* devices;
 public:
-    Configurate() = default;
+    Configurate(std::vector<AbstractConfigType*> childs) {
+        this->childs = childs;
+    };
+
     std::string getConfigName() override {
         return "configurate";
     }
 
     bool requiredField() override {
         return true;
-    }
-
-    bool handelRow(std::vector<uint8_t> row) override;
-
-    std::string getErrorLogPath() {
-        return errorLogPath->getValue();
-    }
-
-    std::string getAcceptLogPath() {
-        return acceptLogPath->getValue();
-    }
-
-    std::vector<ConfigDevice*> getDevices() {
-        return devices->getDevices();
     }
 };
 

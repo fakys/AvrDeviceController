@@ -9,13 +9,16 @@
 
 class ConfigErrorLogPath : public StringConfigFieldType {
     public:
-    ConfigErrorLogPath(std::string value) : StringConfigFieldType(value) {}
     std::string getConfigName() override {
         return "error_log_path";
     }
 
     bool requiredField() override {
         return true;
+    }
+
+    std::string getType() {
+        return PROPERTY_VALUE_STRING_TYPE;
     }
 };
 

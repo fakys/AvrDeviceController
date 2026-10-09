@@ -27,9 +27,16 @@ Communication *Kernel::getCommunication() {
 }
 
 void Kernel::initConfig() {
-    auto* configLoader = new ConfigurateLoader();
-    configLoader->checkConfig();
-    this->configurate = configLoader->loadConfig();
+    this->configLoader = new ConfigurateLoader();
+    this->configLoader->checkConfig();
+}
+
+ConfigurateLoader* Kernel::getConfigLoader() {
+    return this->configLoader;
+}
+
+void Kernel::loadConfig() {
+    this->configurate = this->configLoader->loadConfig();
 }
 
 FileController *Kernel::getFileController() {

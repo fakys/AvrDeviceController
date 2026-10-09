@@ -9,7 +9,6 @@
 
 class DeviceName : public StringConfigFieldType {
 public:
-    DeviceName(std::string value) : StringConfigFieldType(value) {}
     std::string getConfigName() override {
         return "name";
     }

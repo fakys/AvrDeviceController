@@ -5,23 +5,24 @@
 #ifndef AVRDEVICECONTROLLER_ARRAYCONFIGFIELDTYPE_H
 #define AVRDEVICECONTROLLER_ARRAYCONFIGFIELDTYPE_H
 
-#include "AbstractConfigType.h"
+#include "AbstractParentConfigField.h"
 #include "config_parser_helper.h"
 #include "ConfigurateException.h"
 
-class ArrayConfigFieldType : public AbstractConfigType {
-protected:
-    bool checkCloseArray(std::vector<uint8_t> row) {
-        std::string str(row.begin(), row.end());
-        for (uint8_t byte : row) {
-            if (byte == ARRAY_END) {
-                fieldCompleted = true;
-            }else {
-                throw ConfigurateException("Fail parse config: "+ str);
-            }
-        }
-        return fieldCompleted;
+#define ARRAY_TYPE "array"
+
+class ArrayConfigFieldType : public AbstractParentConfigField {
+private:
+    std::vector<AbstractParentConfigField*> array;
+public:
+    virtual AbstractParentConfigField* createChildConf() = 0;
+    void appendChild(AbstractParentConfigField* child) {
+        array.push_back(child);
     }
+    bool handelRow(std::vector<uint8_t> row);
+    std::string getType() {
+        return ARRAY_TYPE;
+    };
 };
 
 #endif //AVRDEVICECONTROLLER_ARRAYCONFIGFIELDTYPE_H

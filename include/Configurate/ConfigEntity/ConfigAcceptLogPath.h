@@ -8,14 +8,16 @@
 
 class ConfigAcceptLogPath : public StringConfigFieldType {
 public:
-    ConfigAcceptLogPath(std::string value) : StringConfigFieldType(value) {}
-
     std::string getConfigName() override {
         return "accept_log_path";
     }
 
     bool requiredField() override {
         return true;
+    }
+
+    std::string getType() {
+        return PROPERTY_VALUE_STRING_TYPE;
     }
 };
 

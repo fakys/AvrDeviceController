@@ -13,6 +13,12 @@ void PluginLoader::loadPlugins() {
         this->loadPlugin(plugin);
     }
 }
+//Загружаем файлы конфига
+void PluginLoader::loadConfigPlugin() {
+    for (AbstractPlugin* plugin : *this->plugins) {
+        //Kernel::getObject()->getConfigLoader()->appendConfigFields(plugin->getConfigs());
+    }
+}
 
 PluginLoader::PluginLoader() {
     this->plugins = new std::vector<AbstractPlugin*>{

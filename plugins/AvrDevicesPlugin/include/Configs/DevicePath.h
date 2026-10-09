@@ -9,8 +9,6 @@
 
 class DevicePath : public StringConfigFieldType {
 public:
-    DevicePath(std::string value) : StringConfigFieldType(value) {}
-
     std::string getConfigName() override {
         return "path";
     }

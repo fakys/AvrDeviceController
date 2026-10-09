@@ -9,20 +9,12 @@
 #include "ConfigDevice.h"
 
 class ConfigAllDevices : public ArrayConfigFieldType {
-private:
-    std::vector<ConfigDevice*> devices;
 public:
-    ConfigAllDevices() = default;
     std::string getConfigName() override {
         return "devices";
     };
     bool requiredField() override {
         return false;
-    };
-    bool handelRow(std::vector<uint8_t> row) override;
-
-    std::vector<ConfigDevice*> getDevices() {
-        return devices;
     };
 };
 

@@ -11,11 +11,10 @@
 class AbstractConfigType {
     protected:
         bool fieldCompleted = false;
-        AbstractConfigType* lastHandelObject = nullptr;
     public:
     virtual std::string getConfigName()=0;
+    virtual std::string getType() = 0;
     virtual bool requiredField() = 0;
-    virtual bool handelRow(std::vector<uint8_t> row) = 0;
 
     bool isCompleted() {
         return fieldCompleted;

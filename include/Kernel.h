@@ -21,7 +21,7 @@ class Kernel : public Singleton<Kernel> {
         Communication *communication;
         FileController* fileController;
         Configurate* configurate;
-
+        ConfigurateLoader* configLoader;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
@@ -30,6 +30,8 @@ class Kernel : public Singleton<Kernel> {
     Communication* getCommunication();
     FileController* getFileController();
     void initConfig();
+    ConfigurateLoader* getConfigLoader();
+    void loadConfig();
     Configurate* getConfigurate();
 };
 

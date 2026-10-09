@@ -1,23 +1,22 @@
 //
-// Created by fakys on 08.10.2026.
+// Created by fakys on 09.10.2026.
 //
 
-#ifndef AVRDEVICECONTROLLER_HTTPCLIENTPLUGIN_H
-#define AVRDEVICECONTROLLER_HTTPCLIENTPLUGIN_H
+#ifndef AVRDEVICECONTROLLER_AVRDEVICESPLUGIN_H
+#define AVRDEVICECONTROLLER_AVRDEVICESPLUGIN_H
 
 #include "AbstractConfigType.h"
 #include "AbstractPlugin.h"
+#include "ConfigAllDevices.h"
 
-class HttpClientPlugin :public AbstractPlugin {
-    public:
+class AvrDevicesPlugin :public AbstractPlugin {
+public:
     std::string getPluginName() override {
-        return "HttpClientPlugin";
+        return "AvrDevicesPlugin";
     }
 
     std::vector<AbstractConfigType*> getConfigs() override {
-        return std::vector<AbstractConfigType*>{
-
-        };
+        return std::vector<AbstractConfigType*>{};
     }
 
     int pluginLoad() override {
@@ -29,4 +28,5 @@ class HttpClientPlugin :public AbstractPlugin {
     }
 };
 
-#endif //AVRDEVICECONTROLLER_HTTPCLIENTPLUGIN_H
+
+#endif //AVRDEVICECONTROLLER_AVRDEVICESPLUGIN_H

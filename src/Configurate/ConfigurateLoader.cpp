@@ -2,6 +2,9 @@
 
 
 #include "ConfigurateLoader.h"
+
+#include "ConfigAcceptLogPath.h"
+#include "ConfigErrorLogPath.h"
 #include "main.h"
 #include "Kernel.h"
 #include "LineReadDriver.h"
@@ -23,7 +26,13 @@ bool ConfigurateLoader::checkConfig() {
 }
 
 
+void ConfigurateLoader::registerBaseConfigs() {
+    this->fields.push_back(new ConfigAcceptLogPath());
+    this->fields.push_back(new ConfigErrorLogPath());
+}
+
 Configurate* ConfigurateLoader::loadConfig() {
+    this->registerBaseConfigs();
     std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END};
 
     FileEntity* file = Kernel::getObject()->getFileController()->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
@@ -41,7 +50,7 @@ Configurate* ConfigurateLoader::loadConfig() {
             if (property) {
                 if (property->propertyName == "configurate" || property->propertyName == "config") {
                     if (property->propertyValueType == PROPERTY_VALUE_OBJECT_TYPE) {
-                        config = new Configurate();
+                        config = new Configurate(this->fields);
                     } else {
                         throw ConfigurateException("Property: "+ property->propertyName + " only object type");
                     }

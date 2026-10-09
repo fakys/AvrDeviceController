@@ -11,8 +11,6 @@
 
 class DeviceType : public StringConfigFieldType {
 public:
-    DeviceType(std::string value) : StringConfigFieldType(value) {}
-
     std::string getConfigName() override {
         return "type";
     }

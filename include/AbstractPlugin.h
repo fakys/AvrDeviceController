@@ -13,6 +13,7 @@ public:
     virtual std::string getPluginName() = 0;
     virtual std::vector<std::string>* getDependPlugins()=0;
     virtual int pluginLoad() = 0;
+    // virtual std::vector<AbstractConfigType*> getConfigs() = 0;
 
     void pluginIsLoaded() {
         pluginLoaded = true;

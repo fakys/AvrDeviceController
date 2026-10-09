@@ -14,8 +14,14 @@ void initKernel(int argc, char* argv[]) {
     //Загрузка и парсинг аргументов
     Kernel::getObject()->handleArguments(argc, argv);
 
-    //Загрузка конфига
+    //Инит конфига
     Kernel::getObject()->initConfig();
+
+    //Загружаем поля для конфига у плагинов
+    Kernel::getObject()->getPluginLoader()->loadConfigPlugin();
+
+    //Загрузка конфига
+    Kernel::getObject()->loadConfig();
 
     //Загружаем все наши плагины
     Kernel::getObject()->getPluginLoader()->loadPlugins();

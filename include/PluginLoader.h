@@ -26,6 +26,7 @@ class PluginLoader {
             return nullptr;
         }
         void loadPlugins();
+        void loadConfigPlugin();
 
 };
 
