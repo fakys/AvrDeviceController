@@ -7,27 +7,21 @@
 #include "CommunicationInputDriver.h"
 #include "CommunicationOutputDriver.h"
 
-class Communication {
+class Communications {
     private:
         CommunicationInputDriver *inputDriver;
         CommunicationOutputDriver *outputDriver;
     public:
-    Communication() {
+    Communications() {
         this->inputDriver = new CommunicationInputDriver();
         this->outputDriver = new CommunicationOutputDriver();
     }
 
-    void sendOutputWarningMessage(std::string message) {
-        this->outputDriver->sendOutputMessage("[Warning] "+message + '\n');
-    }
+    void sendOutputWarningMessage(std::string message);
 
-    void sendOutputErrorMessage(std::string message) {
-        this->outputDriver->sendOutputMessage("[Error] "+message + '\n');
-    }
+    void sendOutputErrorMessage(std::string message);
 
-    void sendOutputInfoMessage(std::string message) {
-        this->outputDriver->sendOutputMessage("[Info] "+message + '\n');
-    }
+    void sendOutputInfoMessage(std::string message);
 
     CommunicationInputDriver *getInputDriver() {
         return inputDriver;

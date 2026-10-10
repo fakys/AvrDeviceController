@@ -5,12 +5,12 @@
 #include <algorithm>
 
 
-class LineWriteDriver: public AbstractReadDriver {
+class LineReadDriver: public AbstractReadDriver {
     private:
         std::vector<uint8_t> separators;
         int currentLine = 0;
     public:
-        LineWriteDriver(std::vector<uint8_t> separators) : separators(std::move(separators)), AbstractReadDriver() {
+        LineReadDriver(std::vector<uint8_t> separators) : separators(std::move(separators)), AbstractReadDriver() {
         }
 
         bool readFile(std::vector<uint8_t>* buffer) override {

@@ -38,7 +38,7 @@ LogerService::LogerService() {
 
 bool LogerService::writeErrorLog(std::string log) {
     if (this->logLevel != LOG_LEVEL_NONE ) {
-        return this->acceptLogFile->getWriteDriver()->writeFile(std::vector<uint8_t>(log.begin(), log.end()));
+        return this->errorLogFile->getWriteDriver()->writeFile(std::vector<uint8_t>(log.begin(), log.end()));
     }
     return true;
 }

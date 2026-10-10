@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "Communication.h"
+#include "Communications.h"
 #include "ConfigurateLoader.h"
 #include "FileController.h"
 #include "PluginLoader.h"
@@ -17,19 +17,19 @@
 
 class Kernel : public Singleton<Kernel> {
     private:
-        PluginLoader* pluginLoader;
         ProcessArgument* processArgument;
-        Communication *communication;
+        Communications *communication;
         FileController* fileController;
         Configurate* configurate;
         ConfigurateLoader* configLoader;
         LogerService* logger;
+        PluginLoader* pluginLoader;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
     void handleArguments(int argc, char* argv[]);
     ProcessArgument* getProcessArgument();
-    Communication* getCommunication();
+    Communications* getCommunication();
     FileController* getFileController();
     void initConfig();
     ConfigurateLoader* getConfigLoader();

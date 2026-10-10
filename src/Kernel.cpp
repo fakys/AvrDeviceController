@@ -6,7 +6,7 @@
 #include "Kernel.h"
 Kernel::Kernel() {
     this->pluginLoader = new PluginLoader();
-    this->communication = new Communication();
+    this->communication = new Communications();
     this->fileController = new FileController();
 }
 
@@ -22,7 +22,7 @@ ProcessArgument *Kernel::getProcessArgument() {
     return this->processArgument;
 }
 
-Communication *Kernel::getCommunication() {
+Communications *Kernel::getCommunication() {
     return this->communication;
 }
 
@@ -51,3 +51,4 @@ void Kernel::initLogerService() {
 LogerService* Kernel::getLogerService() {
     return this->logger;
 }
+
