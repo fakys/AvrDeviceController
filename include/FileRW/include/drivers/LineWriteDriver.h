@@ -12,11 +12,11 @@ private:
 public:
     LineWriteDriver(uint8_t separator) : separator(separator) {};
 
-    bool writeFile(std::vector<uint8_t>* buffer) override {
-        buffer->push_back(this->separator);
-        ssize_t writeSize = write(this->getFileIndex(), &buffer[0], buffer->size());
+    bool writeFile(std::vector<uint8_t> buffer) override {
+        buffer.push_back(this->separator);
+        ssize_t writeSize = write(this->getFileIndex(), &buffer[0], buffer.size());
 
-        return writeSize == buffer->size();
+        return writeSize == buffer.size();
     }
 };
 

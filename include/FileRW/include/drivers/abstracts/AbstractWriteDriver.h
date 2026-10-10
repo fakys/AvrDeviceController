@@ -7,7 +7,7 @@ class AbstractWriteDriver {
 protected:
     int fileIndex = 0;
 public:
-    virtual bool writeFile(std::vector<uint8_t>* buffer) = 0;
+    virtual bool writeFile(std::vector<uint8_t> buffer) = 0;
     void setFileIndex(int fileIndex) {
         this->fileIndex = fileIndex;
     }

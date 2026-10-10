@@ -7,6 +7,8 @@
 #include "StringConfigFieldType.h"
 
 
+#define LOG_LEVEL "log_level"
+
 class ConfigLogLevel :public StringConfigFieldType {
 public:
     std::string getConfigName() override {
