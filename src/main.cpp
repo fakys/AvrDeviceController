@@ -11,6 +11,9 @@ void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
     Kernel::getObject();
 
+    //Создаем менеджер процессов
+    Kernel::getObject()->initProcessManager();
+
     //Загрузка и парсинг аргументов
     Kernel::getObject()->handleArguments(argc, argv);
 
@@ -31,21 +34,22 @@ void initKernel(int argc, char* argv[]) {
 
 int startService() {
 
-    if (!Kernel::getObject()->getProcessArgument()->getDemon()->getValue().empty()) {
-        __pid_t ret;
-        switch(ret=fork())
-        {
-            case -1:
-                Kernel::getObject()->getCommunication()->sendOutputErrorMessage("Error create fork process");
-                return -1;
-            case 0 :
-                Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Success create fork process");
-                break;
-            default :
-                return  0;
-                break;
-          }
-    }
+    //todo делать демонизацию сразу после инита аргументов
+    // if (!Kernel::getObject()->getProcessArgument()->getDemon()->getValue().empty()) {
+    // __pid_t ret;
+    // switch(ret=fork())
+    // {
+    //     case -1:
+    //         Kernel::getObject()->getCommunication()->sendOutputErrorMessage("Error create fork process");
+    //         return -1;
+    //     case 0 :
+    //         Kernel::getObject()->getCommunication()->sendOutputInfoMessage("Success create fork process");
+    //         break;
+    //     default :
+    //         return  0;
+    //         break;
+    //   }
+    // }
     Kernel::getObject()->getCommunication()->sendOutputInfoMessage(PROJECT_NAME" started pid = "+std::to_string(getpid()));
     while (true) {
         //todo выполнять различные проверки

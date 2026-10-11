@@ -14,6 +14,8 @@
 #include "Singleton.h"
 #include "ProcessArgument.h"
 #include "LogerService.h"
+#include "TaskManager.h"
+#include "ProcessManager/ProcessManager.h"
 
 class Kernel : public Singleton<Kernel> {
     private:
@@ -24,6 +26,8 @@ class Kernel : public Singleton<Kernel> {
         ConfigurateLoader* configLoader;
         LogerService* logger;
         PluginLoader* pluginLoader;
+        ProcessManager* processManager;
+        TaskManager* taskManager;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
@@ -37,6 +41,9 @@ class Kernel : public Singleton<Kernel> {
     void initLogerService();
     Configurate* getConfigurate();
     LogerService* getLogerService();
+    void initProcessManager();
+    ProcessManager* getProcessManager();
+    TaskManager* getTaskManager();
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

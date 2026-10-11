@@ -4,10 +4,13 @@
 
 
 #include "Kernel.h"
+#include <unistd.h>
+
 Kernel::Kernel() {
     this->pluginLoader = new PluginLoader();
     this->communication = new Communications();
     this->fileController = new FileController();
+    this->taskManager = new TaskManager();
 }
 
 PluginLoader *Kernel::getPluginLoader() {
@@ -52,3 +55,18 @@ LogerService* Kernel::getLogerService() {
     return this->logger;
 }
 
+void Kernel::initProcessManager() {
+    if (this->processManager) {
+        delete this->processManager;
+    }
+    this->processManager = new ProcessManager(getpid());
+}
+
+ProcessManager* Kernel::getProcessManager() {
+    return this->processManager;
+}
+
+
+TaskManager* Kernel::getTaskManager() {
+    return this->taskManager;
+}
