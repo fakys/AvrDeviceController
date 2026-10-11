@@ -7,6 +7,9 @@
 
 #include "AbstractConfigType.h"
 #include "AbstractPlugin.h"
+#include "HttpObjectConfig.h"
+#include "HttpWorkerTask.h"
+#include "Kernel.h"
 
 class HttpClientPlugin :public AbstractPlugin {
     public:
@@ -16,11 +19,18 @@ class HttpClientPlugin :public AbstractPlugin {
 
     std::vector<AbstractConfigType*> getConfigs() override {
         return std::vector<AbstractConfigType*>{
-
+            new HttpObjectConfig()
         };
     }
 
     int pluginLoad() override {
+        ObjectConfigFieldType* httpConfig = (ObjectConfigFieldType*)Kernel::getObject()->getConfigurate()->getFieldByName("http");
+        if (httpConfig) {
+            Kernel::getObject()->getProcessManager()->createThread(
+                new HttpWorkerTask()
+            );
+        }
+
         return 0;
     }
 

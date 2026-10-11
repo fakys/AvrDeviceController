@@ -26,7 +26,7 @@ class Kernel : public Singleton<Kernel> {
         ConfigurateLoader* configLoader;
         LogerService* logger;
         PluginLoader* pluginLoader;
-        ProcessManager* processManager;
+        ProcessManager* processManager = nullptr;
         TaskManager* taskManager;
     public:
     Kernel();

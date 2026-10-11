@@ -34,7 +34,7 @@ class AbstractParentConfigField :public AbstractConfigType {
                 return field;
             }
         }
-        throw ConfigurateException("Config field not found: "+name);
+        return nullptr;
     };
 };
 

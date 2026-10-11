@@ -1,6 +1,5 @@
 #include "main.h"
 #include "plugins.h"
-
 #include "Kernel.h"
 #include "PluginLoader.h"
 #include <MainException.h>

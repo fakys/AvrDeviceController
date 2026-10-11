@@ -4,14 +4,18 @@
 
 #ifndef AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H
 #define AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H
+#include <iostream>
+
 #include "AbstractTask.h"
 
 class AbstractExecuter {
     private:
-        AbstractTask* task;
+        AbstractTask* task = nullptr;
     public:
         AbstractTask* getTask() { return task; }
-        void setTask(AbstractTask* task) { this->task = task; }
+        void setTask(AbstractTask* t) {
+            this->task = t;
+        }
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H

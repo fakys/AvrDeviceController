@@ -10,7 +10,6 @@
 #include "Thread.h"
 #include <vector>
 
-static thread_local Thread* thread = nullptr;
 
 #define PROCESS_BYTE 1
 #define THREAD_BYTE 2
@@ -19,6 +18,7 @@ class ProcessManager {
     private:
         Process* ParentProcess;
         std::vector<Thread*> threads;
+        thread_local static Thread* thread;
     public:
         ProcessManager(pid_t pid) {
             this->ParentProcess = new Process(pid);

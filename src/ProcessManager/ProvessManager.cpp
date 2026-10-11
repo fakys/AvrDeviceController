@@ -4,6 +4,8 @@
 #include "Kernel.h"
 #include <unistd.h>
 
+thread_local Thread* ProcessManager::thread;
+
 __pid_t ProcessManager::cloneProcess() {
     __pid_t ret;
     switch(ret=fork())
@@ -31,14 +33,18 @@ void ProcessManager::deleteThread(Thread *thread) {
 
 void* ThreadCreate(void* arg) {
     auto* task = (AbstractTask*) arg;
-    Kernel::getObject()->getProcessManager()->setThread(new Thread(gettid()));
+    auto* thread = new Thread(gettid());
+
+    Kernel::getObject()->getProcessManager()->setThread(thread);
     Kernel::getObject()->getProcessManager()->appendThread(thread);
+
+    thread->setTask(task);
     //Выполняем задачу
     Kernel::getObject()->getTaskManager()->TaskExecute(task);
     //Удаляем запершенный поток
     Kernel::getObject()->getProcessManager()->deleteThread(thread);
     //Завершаем процесс
-    exit(0);
+    pthread_exit(nullptr);
 }
 
 void ProcessManager::createThread(AbstractTask* task) {
