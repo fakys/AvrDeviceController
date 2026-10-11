@@ -9,13 +9,15 @@
 
 #include "TaskQueue.h"
 
-class TaskManager {
+class TaskManager : public AbstractMutex {
 private:
     std::vector<TaskQueue*> taskQueue;
 public:
     TaskQueue* createTaskQueue(std::string taskQueueName) {
+        this->lock();
         auto* task = new TaskQueue(taskQueueName);
         taskQueue.push_back(task);
+        this->unlock();
         return task;
     }
 

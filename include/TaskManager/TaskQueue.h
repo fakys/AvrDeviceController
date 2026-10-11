@@ -7,8 +7,9 @@
 #include <string>
 #include <vector>
 #include "AbstractTask.h"
+#include "AbstractMutex.h"
 
-class TaskQueue {
+class TaskQueue : public AbstractMutex {
 private:
     std::string taskQueueName;
     std::vector<AbstractTask*> tasks;
@@ -20,12 +21,16 @@ public:
     };
 
     void appendQueue(AbstractTask* task) {
+        this->lock();
         tasks.push_back(task);
+        this->unlock();
     }
 
     AbstractTask* popTask() {
+        this->lock();
         AbstractTask* task = tasks.back();
         tasks.pop_back();
+        this->unlock();
         return task;
     }
 };
