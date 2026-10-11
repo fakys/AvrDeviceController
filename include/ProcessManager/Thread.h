@@ -13,6 +13,10 @@ private:
     pthread_t thread_id;
 public:
     Thread(pthread_t thread_id) : thread_id(thread_id) {}
+
+    pthread_t getThreadId() {
+        return thread_id;
+    };
 };
 
 #endif //AVRDEVICECONTROLLER_THEREAD_H

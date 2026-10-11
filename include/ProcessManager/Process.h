@@ -13,6 +13,9 @@ class Process : public AbstractExecuter {
         pid_t pid;
     public:
         Process(pid_t pid) : pid(pid) {};
+        pid_t getPid() {
+            return pid;
+        }
 };
 
 #endif //AVRDEVICECONTROLLER_PROCESS_H

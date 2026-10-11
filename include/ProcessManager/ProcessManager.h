@@ -15,38 +15,43 @@
 #define THREAD_BYTE 2
 
 class ProcessManager {
-    private:
-        Process* ParentProcess;
-        std::vector<Thread*> threads;
-        thread_local static Thread* thread;
-    public:
-        ProcessManager(pid_t pid) {
-            this->ParentProcess = new Process(pid);
-        }
-        __pid_t cloneProcess();
+private:
+    Process *ParentProcess;
+    std::vector<Thread *> threads;
+    thread_local static Thread *thread;
 
-        void createThread(AbstractTask* task);
+public:
+    ProcessManager(pid_t pid) {
+        this->ParentProcess = new Process(pid);
+    }
 
-        int whoami();
+    __pid_t cloneProcess();
 
-        Process* getProcess() {
-            return this->ParentProcess;
-        }
+    void createThread(AbstractTask *task);
 
-        void appendThread(Thread* thread) {
-            this->threads.push_back(thread);
-        }
+    int whoami();
 
-        void deleteThread(Thread* thread);
+    Process *getProcess() {
+        return this->ParentProcess;
+    }
 
-        Thread* getThread() {
-            return thread;
-        }
+    void appendThread(Thread *thread) {
+        this->threads.push_back(thread);
+    }
 
-        void setThread(Thread* th) {
-            thread = th;
-        }
+    Thread *getThread() {
+        return thread;
+    }
 
+    void deleteThread(Thread *thread);
+
+    std::vector<Thread *> getThreads() {
+        return threads;
+    }
+
+    void setThread(Thread *th) {
+        thread = th;
+    }
 };
 
 #endif //AVRDEVICECONTROLLER_THREADMANAGER_H

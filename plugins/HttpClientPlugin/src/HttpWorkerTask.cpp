@@ -8,12 +8,11 @@
 #include <unistd.h>
 
 int HttpWorkerTask::Execute() {
-    crow::SimpleApp app;
 
-    CROW_ROUTE(app, "/")([](){
-        return "Hello world";
-    });
+    for (auto method: methods) {
+        method->registerMethod(this->app);
+    }
 
-    app.port(80).multithreaded().run();
+    this->app->port(80).multithreaded().run();
     return 0;
 }
