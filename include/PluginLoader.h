@@ -25,6 +25,9 @@ class PluginLoader {
             }
             return nullptr;
         }
+        std::vector<AbstractPlugin*>* getPlugins() {
+            return this->plugins;
+        }
         void loadPlugins();
         void loadConfigPlugin();
 

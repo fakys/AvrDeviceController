@@ -14,6 +14,7 @@ target_compile_definitions(AvrDeviceController PUBLIC
         "PROJECT_NAME=\"ALL_PLUGIN_OBJET\""
 )
 add_definitions(-D_PROJECT_CONFIG_PATH_="/etc/avr_device_controller/main.conf")
+add_definitions(-DDEMON_PROCESS_SLEEP=500)
 
 #Регистрируем до библиотеки
 include(cmake/CPM.cmake) #Инструмет для загруски сторонних репозиториев

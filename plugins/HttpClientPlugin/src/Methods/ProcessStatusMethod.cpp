@@ -6,7 +6,7 @@
 #include "Kernel.h"
 
 void ProcessStatusMethod::registerMethod(crow::SimpleApp *app) {
-    CROW_ROUTE((*app), "/processing/status")([]() {
+    CROW_ROUTE((*app), "/process/status")([]() {
         crow::json::wvalue jsonResponse(
             {
                 {

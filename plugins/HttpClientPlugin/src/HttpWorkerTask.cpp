@@ -7,12 +7,23 @@
 #include "crow.h"
 #include <unistd.h>
 
+#include "HttpObjectConfig.h"
+#include "Kernel.h"
+#include "StringConfigFieldType.h"
+
 int HttpWorkerTask::Execute() {
 
     for (auto method: methods) {
         method->registerMethod(this->app);
     }
-
-    this->app->port(80).multithreaded().run();
+    HttpObjectConfig* httpConf = (HttpObjectConfig*)Kernel::getObject()->getConfigurate()->getFieldByName("http");
+    StringConfigFieldType* httpPort = (StringConfigFieldType*)httpConf->getFieldByName("http_port");
+    this->app->port((uint16_t)std::stoi(httpPort->getValue())).multithreaded().run();
     return 0;
+}
+
+
+void HttpWorkerTask::stopTask() {
+    //Стопаем задачу
+    this->app->stop();
 }

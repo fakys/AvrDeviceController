@@ -19,6 +19,8 @@ class HttpWorkerTask : public AbstractTask {
         HttpWorkerTask(std::vector<AbstractHttpMethod*> methods, crow::SimpleApp* app) : methods(std::move(methods)), app(app) {};
         int Execute() override;
 
+        void stopTask() override;
+
         std::string getTaskName() override {
             return "Http worker";
         };

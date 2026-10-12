@@ -16,6 +16,7 @@ class AbstractTask : public AbstractMutex {
         virtual int Execute() = 0;
         virtual std::string getTaskName() = 0;
         virtual std::string getTaskDescription() = 0;
+        virtual void stopTask() = 0;
         void startTask() {
             this->status = ACTIVE;
         }

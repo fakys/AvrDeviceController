@@ -16,6 +16,12 @@ class AbstractExecuter {
         void setTask(AbstractTask* t) {
             this->task = t;
         }
+        void stop() {
+            //Если задача есть то останавливаем её
+            if (this->getTask()) {
+                this->getTask()->startTask();
+            }
+        };
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H

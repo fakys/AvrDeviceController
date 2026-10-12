@@ -5,6 +5,14 @@
 #include <MainException.h>
 #include <unistd.h>
 #include "ConfigAcceptLogPath.h"
+#include <csignal>
+
+void signalHandler(int signum) {
+    for (Thread* thread : Kernel::getObject()->getProcessManager()->getThreads()) {
+        thread->stop();
+    }
+    Kernel::getObject()->getProcessManager()->getProcess()->stop();
+}
 
 void initKernel(int argc, char* argv[]) {
     //Создаем загрузчик ядра
@@ -50,8 +58,12 @@ int startService() {
     //   }
     // }
     Kernel::getObject()->getCommunication()->sendOutputInfoMessage(PROJECT_NAME" started pid = "+std::to_string(getpid()));
+
     while (true) {
-        //todo выполнять различные проверки
+        //Небольшая задержка
+        std::this_thread::sleep_for(std::chrono::milliseconds(DEMON_PROCESS_SLEEP));
+        signal(SIGTERM, signalHandler);
+        signal(SIGINT, signalHandler);
     }
     return 0;
 }
@@ -59,6 +71,7 @@ int startService() {
 
 int main(int argc, char* argv[]) {
     try {
+
         initKernel(argc, argv);
 
         return startService();

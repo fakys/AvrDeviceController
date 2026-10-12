@@ -5,7 +5,6 @@
 #ifndef AVRDEVICECONTROLLER_HTTPOBJECTCONFIG_H
 #define AVRDEVICECONTROLLER_HTTPOBJECTCONFIG_H
 #include "HttpPortConfig.h"
-#include "HttpWorkerCount.h"
 #include "ObjectConfigFieldType.h"
 
 class HttpObjectConfig : public ObjectConfigFieldType {
@@ -13,7 +12,6 @@ public:
     HttpObjectConfig() {
         this->childs = std::vector<AbstractConfigType*> {
             new HttpPortConfig(),
-            new HttpWorkerCount(),
         };
     }
     std::string getConfigName() override {

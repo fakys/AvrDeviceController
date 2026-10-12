@@ -6,7 +6,6 @@
 #define AVRDEVICECONTROLLER_THEREAD_H
 
 #include "AbstractExecuter.h"
-#include <pthread.h>
 
 class Thread : public AbstractExecuter {
 private:

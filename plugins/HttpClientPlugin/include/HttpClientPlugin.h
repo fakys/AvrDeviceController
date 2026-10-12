@@ -28,7 +28,7 @@ class HttpClientPlugin :public AbstractPlugin {
 
     int pluginLoad() override {
         ObjectConfigFieldType* httpConfig = (ObjectConfigFieldType*)Kernel::getObject()->getConfigurate()->getFieldByName("http");
-        if (httpConfig) {
+        if (httpConfig->isCompleted()) {
             crow::SimpleApp* app = new crow::SimpleApp();
             Kernel::getObject()->getProcessManager()->createThread(
                 new HttpWorkerTask(std::vector<AbstractHttpMethod*> {

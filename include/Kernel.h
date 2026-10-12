@@ -15,7 +15,8 @@
 #include "ProcessArgument.h"
 #include "LogerService.h"
 #include "TaskManager.h"
-#include "ProcessManager/ProcessManager.h"
+#include "ProcessManager.h"
+#include "atomic"
 
 class Kernel : public Singleton<Kernel> {
     private:
@@ -24,7 +25,7 @@ class Kernel : public Singleton<Kernel> {
         FileController* fileController;
         Configurate* configurate;
         ConfigurateLoader* configLoader;
-        LogerService* logger;
+        LogerService* logger = nullptr;
         PluginLoader* pluginLoader;
         ProcessManager* processManager = nullptr;
         TaskManager* taskManager;
