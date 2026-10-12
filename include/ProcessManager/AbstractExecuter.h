@@ -19,7 +19,7 @@ class AbstractExecuter {
         void stop() {
             //Если задача есть то останавливаем её
             if (this->getTask()) {
-                this->getTask()->startTask();
+                this->getTask()->stopTask();
             }
         };
 };

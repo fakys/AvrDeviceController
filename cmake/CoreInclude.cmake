@@ -19,5 +19,6 @@ function(IncludeCore)
             ${CMAKE_SOURCE_DIR}/include/Loger/Exceptions
             ${CMAKE_SOURCE_DIR}/include/TaskManager
             ${CMAKE_SOURCE_DIR}/include/ProcessManager
+            ${CMAKE_SOURCE_DIR}/include/TaskManager/tasks
     )
 endfunction()
