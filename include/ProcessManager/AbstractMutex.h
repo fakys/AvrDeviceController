@@ -7,8 +7,6 @@
 
 #include <mutex>
 
-#include "AbstractTask.h"
-
 class AbstractMutex : public std::mutex {
 };
 

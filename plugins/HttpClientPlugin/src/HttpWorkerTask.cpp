@@ -25,6 +25,5 @@ int HttpWorkerTask::Execute() {
 
 void HttpWorkerTask::stopTask() {
     //Стопаем задачу
-    std::cout << "2222222 " <<  std::endl;
     this->app->stop();
 }

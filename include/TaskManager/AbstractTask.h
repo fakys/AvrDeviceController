@@ -7,7 +7,9 @@
 
 #define PENDING 0
 #define ACTIVE 1
+
 #include "AbstractMutex.h"
+#include <string>
 
 class AbstractTask : public AbstractMutex {
     private:

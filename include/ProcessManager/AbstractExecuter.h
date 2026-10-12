@@ -4,7 +4,7 @@
 
 #ifndef AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H
 #define AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H
-#include <iostream>
+
 
 #include "AbstractTask.h"
 
@@ -16,12 +16,7 @@ class AbstractExecuter {
         void setTask(AbstractTask* t) {
             this->task = t;
         }
-        void stop() {
-            //Если задача есть то останавливаем её
-            if (this->getTask()) {
-                this->getTask()->stopTask();
-            }
-        };
+        void stop();
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTEXECUTER_H
