@@ -11,7 +11,7 @@ class MainException : public std::exception {
 private:
     std::string message;
     public:
-    MainException(std::string message): message(message) {};
+    MainException(std::string& message): message(message) {};
 
     std::string getMessage() {
         return message;

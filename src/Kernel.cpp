@@ -12,6 +12,8 @@ Kernel::Kernel() {
     this->fileController = new FileController();
     this->taskManager = new TaskManager();
     this->deviceManager = new DeviceManager();
+    this->operationSystemsManager = new OperationSystemsManager();
+    this->protocolsManager = new ProtocolsManager();
 }
 
 PluginLoader *Kernel::getPluginLoader() {
@@ -74,4 +76,12 @@ TaskManager* Kernel::getTaskManager() {
 
 DeviceManager* Kernel::getDeviceManager() {
     return this->deviceManager;
+}
+
+ProtocolsManager *Kernel::getProtocolsManager() {
+    return this->protocolsManager;
+}
+
+OperationSystemsManager *Kernel::getOperationSystemsManager() {
+    return this->operationSystemsManager;
 }

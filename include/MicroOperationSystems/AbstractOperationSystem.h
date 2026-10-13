@@ -7,7 +7,7 @@
 
 class AbstractOperationSystem {
     public:
-    AbstractOperationSystem();
+    virtual std::string getName() = 0;
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTOPERATIONSYSTEM_H

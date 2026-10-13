@@ -17,6 +17,8 @@
 #include "TaskManager.h"
 #include "ProcessManager.h"
 #include "DeviceManager.h"
+#include "OperationSystemsManager.h"
+#include "ProtocolsManager.h"
 
 class Kernel : public Singleton<Kernel> {
     private:
@@ -30,6 +32,8 @@ class Kernel : public Singleton<Kernel> {
         ProcessManager* processManager = nullptr;
         TaskManager* taskManager;
         DeviceManager* deviceManager;
+        OperationSystemsManager* operationSystemsManager;
+        ProtocolsManager* protocolsManager;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
@@ -47,6 +51,8 @@ class Kernel : public Singleton<Kernel> {
     ProcessManager* getProcessManager();
     TaskManager* getTaskManager();
     DeviceManager* getDeviceManager();
+    OperationSystemsManager* getOperationSystemsManager();
+    ProtocolsManager* getProtocolsManager();
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

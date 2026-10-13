@@ -21,5 +21,7 @@ function(IncludeCore)
             ${CMAKE_SOURCE_DIR}/include/ProcessManager
             ${CMAKE_SOURCE_DIR}/include/TaskManager/tasks
             ${CMAKE_SOURCE_DIR}/include/Devices
+            ${CMAKE_SOURCE_DIR}/include/MicroOperationSystems
+            ${CMAKE_SOURCE_DIR}/include/Protocols
     )
 endfunction()

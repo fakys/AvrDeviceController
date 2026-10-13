@@ -13,7 +13,7 @@ class DeviceManager {
         std::vector<Device*> devices;
     public:
 
-    void append(Device* device) {
+    void registerDevice(Device* device) {
         devices.push_back(device);
     }
 

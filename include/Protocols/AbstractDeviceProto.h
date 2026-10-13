@@ -7,7 +7,7 @@
 
 class AbstractDeviceProto {
     public:
-    AbstractDeviceProto();
+    virtual std::string getName() = 0;
 };
 
 #endif //AVRDEVICECONTROLLER_ABSTRACTDEVICEPROTO_H

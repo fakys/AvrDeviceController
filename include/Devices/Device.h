@@ -15,6 +15,7 @@
 
 class Device {
     protected:
+        std::string deviceName;
         std::string architectureName;
         uint64_t mac_address;
         uint8_t status;
@@ -22,12 +23,12 @@ class Device {
         AbstractDeviceProto* proto;
     public:
         Device(
-            std::string architectureName,
-            uint64_t mac_address,
+            std::string& name,
+            std::string& architectureName,
             uint8_t status,
             AbstractOperationSystem* operation_system,
             AbstractDeviceProto* proto
-        ): mac_address(mac_address), status(status), operation_system(operation_system), proto(proto), architectureName(architectureName) {};
+        ): deviceName(name), status(status), operation_system(operation_system), proto(proto), architectureName(architectureName) {};
 
         AbstractOperationSystem* getOperationSystem() {
             return operation_system;
