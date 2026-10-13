@@ -1,5 +1,5 @@
 //
-// Created by fakys on 07.10.2026.
+// Created by fakys on 13.10.2026.
 //
 
 #ifndef AVRDEVICECONTROLLER_DEVICETYPE_H
@@ -7,6 +7,7 @@
 
 #include "StringConfigFieldType.h"
 
+#define DEVICE_TYPE_FIELD "type"
 #define UART_TYPE "UART"
 
 class DeviceType : public StringConfigFieldType {

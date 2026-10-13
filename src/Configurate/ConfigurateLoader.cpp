@@ -4,6 +4,7 @@
 #include "ConfigurateLoader.h"
 
 #include "ConfigAcceptLogPath.h"
+#include "ConfigAllDevices.h"
 #include "ConfigErrorLogPath.h"
 #include "main.h"
 #include "Kernel.h"
@@ -31,6 +32,7 @@ void ConfigurateLoader::registerBaseConfigs() {
     this->fields.push_back(new ConfigAcceptLogPath());
     this->fields.push_back(new ConfigErrorLogPath());
     this->fields.push_back(new ConfigLogLevel());
+    this->fields.push_back(new ConfigAllDevices());
 }
 
 Configurate* ConfigurateLoader::loadConfig() {
@@ -38,9 +40,6 @@ Configurate* ConfigurateLoader::loadConfig() {
     std::vector<uint8_t> vectorStrEnd = std::vector<uint8_t>{STRING_END, ARRAY_START, ARRAY_END, OBJECT_START, OBJECT_END};
 
     FileEntity* file = Kernel::getObject()->getFileController()->openFile(this->configPath, new LineReadDriver(vectorStrEnd));
-    if (!file) {
-        throw ConfigurateException("Fail open config file");
-    }
 
     //Читаем конфиг по одной строке, формат ключ=значение
     std::vector<uint8_t> buffer;

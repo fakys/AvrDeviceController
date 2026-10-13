@@ -16,7 +16,7 @@
 #include "LogerService.h"
 #include "TaskManager.h"
 #include "ProcessManager.h"
-#include "atomic"
+#include "DeviceManager.h"
 
 class Kernel : public Singleton<Kernel> {
     private:
@@ -29,6 +29,7 @@ class Kernel : public Singleton<Kernel> {
         PluginLoader* pluginLoader;
         ProcessManager* processManager = nullptr;
         TaskManager* taskManager;
+        DeviceManager* deviceManager;
     public:
     Kernel();
     PluginLoader* getPluginLoader();
@@ -45,6 +46,7 @@ class Kernel : public Singleton<Kernel> {
     void initProcessManager();
     ProcessManager* getProcessManager();
     TaskManager* getTaskManager();
+    DeviceManager* getDeviceManager();
 };
 
 #endif //AVR_PROTO_LINUX_KERNEL_H

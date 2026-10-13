@@ -8,6 +8,8 @@
 #include "ArrayConfigFieldType.h"
 #include "ConfigDevice.h"
 
+#define DEVICES "devices"
+
 class ConfigAllDevices : public ArrayConfigFieldType {
 public:
      AbstractParentConfigField* createChildConf() override {

@@ -5,9 +5,12 @@
 #ifndef AVRDEVICECONTROLLER_CONFIGDEVICE_H
 #define AVRDEVICECONTROLLER_CONFIGDEVICE_H
 #include "DeviceName.h"
+#include "DeviceOperationSystem.h"
 #include "DevicePath.h"
+#include "DeviceProto.h"
 #include "DeviceType.h"
 #include "ObjectConfigFieldType.h"
+#include "DeviceArchitectureConf.h"
 
 class ConfigDevice : public ObjectConfigFieldType {
 public:
@@ -16,6 +19,9 @@ public:
             new DeviceName(),
             new DevicePath(),
             new DeviceType(),
+            new DeviceProto(),
+            new DeviceOperationSystem(),
+            new DeviceArchitectureConf(),
         };
     }
     std::string getConfigName() override {

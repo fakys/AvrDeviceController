@@ -7,6 +7,8 @@
 
 #include "StringConfigFieldType.h"
 
+#define DEVICE_FIELD_NAME "name"
+
 class DeviceName : public StringConfigFieldType {
 public:
     std::string getConfigName() override {

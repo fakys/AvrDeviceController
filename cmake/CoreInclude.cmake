@@ -20,5 +20,6 @@ function(IncludeCore)
             ${CMAKE_SOURCE_DIR}/include/TaskManager
             ${CMAKE_SOURCE_DIR}/include/ProcessManager
             ${CMAKE_SOURCE_DIR}/include/TaskManager/tasks
+            ${CMAKE_SOURCE_DIR}/include/Devices
     )
 endfunction()

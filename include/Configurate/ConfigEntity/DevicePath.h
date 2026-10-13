@@ -7,6 +7,9 @@
 
 #include "StringConfigFieldType.h"
 
+#define DEVICE_PATH_FILED = "path"
+
+//todo пофакту является кастылем потому что пока есть возможность связываться с девайсами только по uart
 class DevicePath : public StringConfigFieldType {
 public:
     std::string getConfigName() override {
